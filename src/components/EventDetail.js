@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import SecondHeader from './SecondHeader';
 import Footer from './Footer';
 import {UserOutlined, CalendarOutlined, EnvironmentOutlined, TagOutlined, FireFilled } from '@ant-design/icons';
-
+import Context from './Context';
 
 const EventDetail =  (props) =>  {
 
@@ -24,6 +24,9 @@ const EventDetail =  (props) =>  {
         getEvent(props);
     }, [props]);
 
+
+    const value = useContext(Context);
+
     // {ev.headliner} {ev.city} {ev.date} {ev.description} {ev.address}
     return (
         <div className="event_detail_page">
@@ -40,7 +43,7 @@ const EventDetail =  (props) =>  {
                         <div className="event_info event_detail_price"> <TagOutlined className="detail_icon" /> {ev.price} грн </div>
                         <div className="event_info event_detail_popular"> <FireFilled className="detail_icon detail_icon_red" /> Popular Event </div>
                         <div className="buy_ticket_btn_block">
-                            <button className="buy_ticket_btn" > + Buy Ticket </button>
+                            <button className="buy_ticket_btn" onClick={() => value.addToCart(ev)} > + To Cart </button>
                         </div>
                     </div>  
                 </div>
@@ -48,9 +51,7 @@ const EventDetail =  (props) =>  {
                         <div className="event_detail_header"> About This Event:</div>
                         {ev.description}
                 </div>
-                <div className="buy_ticket_btn_block">
-                        <button className="buy_ticket_btn second_buy_ticket_btn"> + Buy Ticket </button>
-                </div> 
+                 
                     
                 
             </div>

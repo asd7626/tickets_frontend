@@ -17,6 +17,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
+
 /* 320x480 */
 @media(min-width: 320px) {
 
@@ -33,11 +35,20 @@ h1, h2, h3, h4, h5, h6 {
     
   }
 
+  header a {
+    text-decoration: none;
+    
+  }
+
   .second_header {
     width: 100%;
     padding: 0.5rem 10px;
     background-color: #000;
     transition: all .4s linear;
+  }
+
+  .second_header a {
+    text-decoration: none;
   }
 
   .nav {
@@ -46,10 +57,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    
-    
-
-
   }
 
   .logo {
@@ -65,8 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
   span.logo_tickets {
     font-weight: 500;
-    color: blue;
-    
+    color: blue; 
   }
 
   span.logo_ua {
@@ -120,6 +126,21 @@ h1, h2, h3, h4, h5, h6 {
 
   .hamburger_menu:hover span {
     background-color: blue;
+  }
+
+  a.cart_link {
+    text-decoration: none;
+  }
+
+  .cart_icon {
+    font-size: 30px;
+    color: rgb(27, 240, 73);
+  }
+
+  span.cart_number {
+    font-size: 23px;
+    color: rgb(27, 240, 73);
+    text-decoration: none;
   }
 
   .Container {
@@ -177,9 +198,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .event_card:hover .event_card_items {
-    background-color: #000;
-    color: #fff;
+    color: #000;
   }
+
+  
   
   .event_card_img_wrapper {
     position: relative;
@@ -359,6 +381,22 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 10px;
     }
 
+    .buy_ticket_btn_on_card {
+      font-family: 'Anton', sans-serif;
+      padding: 10px;
+      background-color: rgb(27, 240, 73);
+      color: #fff;
+      border: 0;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all .3s linear;
+      
+      
+    }
+    
+    .buy_ticket_btn_on_card:hover {
+      background-color: rgb(150, 252, 49);
+    }
 
     .second_buy_ticket_btn {
       margin: 30px 0;
@@ -375,6 +413,8 @@ h1, h2, h3, h4, h5, h6 {
       
     }
 
+
+    
 
     /* City menu */
     .city_menu {
@@ -551,6 +591,208 @@ h1, h2, h3, h4, h5, h6 {
       border: 1px solid #000;
     }
 
+    /* Cart Page */
+
+    .order_cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+
+    .cardWrap {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: row;
+      
+    }
+
+    .card {
+      background: linear-gradient(to bottom, #e84c3d 0%, #e84c3d 20%, #ecedef 20%, #ecedef 100%);
+      height: auto;
+      position: relative;
+      padding: 0.5em;
+      
+      
+    }
+
+    .cardLeft {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      width: 65%;
+     
+    }
+
+    .cardRight {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      width: 35%;
+      border-left: .18em dashed #fff;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      
+    }
+
+    .cardRight::before, .cardRight::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: .9em;
+      height: .9em;
+      background: #fff;
+      border-radius: 50%;
+      left: -.5em;
+    }
+
+    .cardRight::before {
+      top: -.4em;
+    }
+
+    .cardRight::after {
+      bottom: -.4em;
+    }
+
+    .cardWrap h1 {
+      font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 30px;
+      margin-top: 0;
+    }
+
+    .cardWrap span {
+      font-weight: normal;
+    }
+
+    .title, .name, .seat, .time {
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    .title h2, .name h2, .seat h2, .time h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+      margin: 0;
+    }
+
+    .title span, .name span, .seat span, .time span {
+      font-size: 11px;
+      color: #e84c3d;
+      font-weight: 700;
+    }
+
+    .title {
+      margin: 1em 0 0 0;
+    }
+    
+    .name, .seat {
+      margin: .7em 0 0 0;
+    }
+    
+    .time {
+      margin: .7em 0 0 1em;
+    }
+    
+    .seat_time {
+      display: flex;
+      flex-direction: row;
+    }
+
+    
+
+    .eye {
+      position: relative;
+      width: 2em;
+      height: 1.5em;
+      background: #fff;
+      margin: 0 auto;
+      border-radius: 1em/0.6em;
+      z-index: 1;
+    }
+
+    .eye::before, .eye::after {
+      content:"";
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .eye::before {
+      width: 1em;
+      height: 1em;
+      background: red;
+      z-index: 2;
+      left: 8px;
+      top: 4px;
+    }
+
+    .eye::after {
+      width: .5em;
+      height: .5em;
+      background: #fff;
+      z-index: 3;
+      left: 12px;
+      top: 8px;
+    }
+
+
+    .number {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .number h3 {
+      color: #e84c3d;
+      margin: .9em 0 0 0;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .number span {
+      display: block;
+      color: #000;
+      font-weight: 700;
+    }
+
+    .barcode {
+      
+      height: 2em;
+      width: 0;
+      margin: 0 auto;
+      
+      box-shadow: 1px 0 0 1px black,
+      5px 0 0 1px black,
+      10px 0 0 1px black,
+      11px 0 0 1px black,
+      15px 0 0 1px black,
+      18px 0 0 1px black,
+      22px 0 0 1px black,
+      23px 0 0 1px black,
+      26px 0 0 1px black,
+      30px 0 0 1px black,
+      35px 0 0 1px black,
+      37px 0 0 1px black,
+      41px 0 0 1px black,
+      44px 0 0 1px black,
+      47px 0 0 1px black,
+      51px 0 0 1px black,
+      56px 0 0 1px black,
+      59px 0 0 1px black,
+      64px 0 0 1px black,
+      68px 0 0 1px black,
+      72px 0 0 1px black,
+      74px 0 0 1px black,
+      77px 0 0 1px black,
+      81px 0 0 1px black;
+    }
+
 }
 
 
@@ -662,6 +904,13 @@ h1, h2, h3, h4, h5, h6 {
   .event_card {
     max-width: 435px;
   }
+
+  /* Cart Page */
+  .cardWrap {
+    max-width: 450px;
+  }
+
+
 }
 
 
@@ -843,6 +1092,11 @@ h1, h2, h3, h4, h5, h6 {
   .footer_info, .footer_phone_numbers {
     font-size: 26px;
   }
+
+  /* Cart Page */
+  .cardWrap {
+    max-width: 500px;
+  }
   
 }
 
@@ -906,6 +1160,18 @@ h1, h2, h3, h4, h5, h6 {
   .event_detail_info {
     padding: 0 15px;
   }
+
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .cardWrap {
+    max-width: 375px;
+  }
+
+
 }
 
 
@@ -997,6 +1263,16 @@ h1, h2, h3, h4, h5, h6 {
     
   }
 
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .cardWrap {
+    max-width: 400px;
+  }
+
   
 }
 
@@ -1033,6 +1309,16 @@ h1, h2, h3, h4, h5, h6 {
 
   .event_info {
     font-size: 24px;
+  }
+
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  .cardWrap {
+    max-width: 425px;
   }
 }
 
@@ -1126,6 +1412,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 12px 22px;
     font-size: 18px;
   }
+
+  
 }
 
 /* 1080 */
@@ -1136,6 +1424,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .event_card {
+    max-width: 340px;
+  }
+
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+
+  .cardWrap {
     max-width: 340px;
   }
 }
@@ -1160,6 +1458,16 @@ h1, h2, h3, h4, h5, h6 {
   /* Event Detail */
   .event_detail_info {
     padding: 0 40px;
+  }
+
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+
+  .cardWrap {
+    max-width: 360px;
   }
 }
 
@@ -1225,6 +1533,16 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 40px;
   }
 
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+
+  .cardWrap {
+    max-width: 380px;
+  }
+
 
 }
 
@@ -1238,6 +1556,16 @@ h1, h2, h3, h4, h5, h6 {
 
   .event_card {
     max-width: 380px;
+  }
+
+  /* Cart Page */
+  .order_cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+  }
+
+  .cardWrap {
+    max-width: 400px;
   }
 }
 
@@ -1271,6 +1599,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu_link {
   font-size: 26px;
+}
+
+/* Cart Page */
+.order_cards {
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.cardWrap {
+  max-width: 415px;
 }
 
 }
@@ -1324,6 +1662,16 @@ h1, h2, h3, h4, h5, h6 {
   .footer_logo, .social_media span {
     font-size: 44px;
   }
+
+  /* Cart Page */
+.order_cards {
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.cardWrap {
+  max-width: 430px;
+}
 }
 
 
@@ -1364,6 +1712,16 @@ h1, h2, h3, h4, h5, h6 {
   .event_card {
     max-width: 490px;
   }
+
+  /* Cart Page */
+.order_cards {
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.cardWrap {
+  max-width: 500px;
+}
 }
 
 

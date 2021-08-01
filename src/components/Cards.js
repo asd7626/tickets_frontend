@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
-//import Card from './Card';
+import Context from './Context';
 
-const Cards = ({event_list, header}) => {
+const Cards = ({event_list, header, cart, addToCart}) => {
     const [visible, setVisible] = useState(2);
     
     const viewMoreEvents = () => {
@@ -14,13 +14,17 @@ const Cards = ({event_list, header}) => {
         return string[0].toUpperCase() + string.slice(1);
     }
 
+    const value = useContext(Context);
+
     return( 
         <div>
+            
             <div className="event_cards_header"> {header} </div>
+            
             <div className="event_cards">
                 
                 {event_list.slice(0, visible).map((event_item) => {
-                    const {id, poster, headliner, city, address, date, description, price} = event_item;
+                    const {id, poster, headliner, city, date, price} = event_item;
                     return (
                         
                             <div className="event_card" key={id}>
@@ -35,6 +39,9 @@ const Cards = ({event_list, header}) => {
                                     <div className="event_card_price"> От {price} грн </div>
                                 </div>
                                 </ Link >
+                                <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> + To Cart </button>
+                                
+                                
                             </div>
                         
                         

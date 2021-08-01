@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import Context from './Context';
 
 
 const SecondHeader = () => {
@@ -8,6 +9,7 @@ const SecondHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenCity, setIsOpenCity] = useState(false);
     
+    const value = useContext(Context);
 
     return (
         <div className="second_header">
@@ -27,6 +29,8 @@ const SecondHeader = () => {
                     <span></span>
                     <span></span>
                 </div>
+
+                <Link classname="cart_link" to='/cart'> <ShoppingCartOutlined className="cart_icon" /> <span className="cart_number"> ({value.cart.length}) </span> </Link>
                 <div className="menu" isOpen={isOpen} style={{maxHeight: isOpen ? 300+'px' : 0}}>
                     <Link className="menu_link" to="/category/concerts"> Concerts </Link>
                     <Link className="menu_link" to="/category/humor"> Humor </Link>

@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import Context from './Context';
 import {Link} from 'react-router-dom';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
     const [isOpenCity, setIsOpenCity] = useState(false);
     const [scrollTop, setScrollTop] = useState(0);
 
-    
+    const value = useContext(Context);
 
     useEffect(() => {
         function onScroll() {
@@ -35,12 +36,13 @@ const Header = () => {
                         <Link to='/kharkiv'> Kharkiv </Link>
                     </div>
                 </div>
-                
+                <Link classname="cart_link" to='/cart'> <ShoppingCartOutlined className="cart_icon" /> <span className="cart_number"> ({value.cart.length}) </span>  </Link> 
                 <div className="hamburger_menu" onClick={() => setIsOpen(!isOpen)} >
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+                
                 <div className="menu" isOpen={isOpen} style={{maxHeight: isOpen ? 300+'px' : 0}}>
                     <Link className="menu_link" to="/category/concerts"> Concerts </Link>
                     <Link className="menu_link" to="/category/humor"> Humor </Link>
