@@ -8,22 +8,36 @@ function App() {
      //Cart
 
      const [cart, setCart] = useState([]);
+     const [totalValue, setTotalValue] = useState(0);
 
      const addToCart = (eventToAdd) => {
+         let val = totalValue;
          setCart([...cart, {... eventToAdd }]);
-         console.log('cart list:', cart);
+         val += eventToAdd.price;
+         setTotalValue(val);
+         
      };
  
      const removeFromCart = (eventToRemove) => {
+         let val = totalValue;
          setCart(cart.filter((ev) => ev !== eventToRemove));
+         val -= eventToRemove.price;
+         setTotalValue(val);
      };
- 
+     
+     const clearOffCart = () => {
+       setCart([]);
+       setTotalValue(0);
+     }
+     
  
      //Все для контекста
      const value = {
        cart,
        addToCart,
-       removeFromCart
+       removeFromCart,
+       clearOffCart,
+       totalValue
      }
   
   return (
