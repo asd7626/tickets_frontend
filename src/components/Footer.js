@@ -17,11 +17,11 @@ const Footer = () => {
 
             <div className="footer_info_numbers">
                 <div className="footer_info">
-                    <Link> How To Buy </Link>
-                    <Link> To Organizators </Link>
-                    <Link> Return Tickets</Link>
-                    <Link> Shipping </Link>
-                    <Link> Guarantees </Link>
+                    <Link to='/info/how-to-buy'> How To Buy </Link>
+                    <Link to='/info/to-organizators'> To Organizators </Link>
+                    <Link to='/info/return-tickets'> Return Tickets</Link>
+                    <Link to='/info/shipping'> Shipping </Link>
+                    <Link to='/info/guarantees'> Guarantees </Link>
                 </div>
                 
                 <div className="footer_phone_numbers">

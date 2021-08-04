@@ -8,6 +8,7 @@ import LatestEvents from './components/LatestEvents';
 import EventsByCategory from './components/EventsByCategory';
 import EventsByCity from './components/EventsByCity';
 import Cart from './components/Cart';
+import Info from './components/Info';
 
 const BaseRouter = () => (
     <div>
@@ -18,8 +19,8 @@ const BaseRouter = () => (
             
             <Route exact path='/new' component={LatestEvents}   />
             <Route exact path='/popular' component={PopularEvents} />
-             
-            <Route  path= '/:city([a-z]+)' component={EventsByCity} />
+            <Route  path='/info/:info' component={Info} />
+            <Route  path='/:city([a-z]+)' component={EventsByCity} />
             <Route  path='/:eventID([0-9]+)' component={EventDetail} />       
         </Switch>   
     </div>

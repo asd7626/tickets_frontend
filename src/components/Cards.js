@@ -1,6 +1,8 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import Context from './Context';
+import {UserOutlined, CalendarOutlined, EnvironmentOutlined, TagOutlined, FireFilled } from '@ant-design/icons';
+
 
 const Cards = ({event_list, header, cart, addToCart}) => {
     const [visible, setVisible] = useState(2);
@@ -18,11 +20,9 @@ const Cards = ({event_list, header, cart, addToCart}) => {
 
     return( 
         <div>
-            
-            {event_list.length > 0 && <div className="event_cards_header"> {header} </div>}
-            
+            <div className="event_cards_header"> {header} </div>
+            {event_list.length === 0? <div className="no_events_div"> No Events Yet :) <Link to='/'><button className="back_btn"> Back To Index </button> </Link> </div> :
             <div className="event_cards">
-                
                 {event_list.slice(0, visible).map((event_item) => {
                     const {id, poster, headliner, city, date, price} = event_item;
                     return (
@@ -33,10 +33,10 @@ const Cards = ({event_list, header, cart, addToCart}) => {
                                     <img src={poster} alt={headliner} />
                                 </div>
                                 <div className="event_card_items">
-                                    <div className="event_card_singer"> {headliner} </div>
-                                    <div className="event_card_date"> {date} </div>
-                                    <div className="event_card_city"> {capitalizeFirstLetter(`${city}`)} </div>
-                                    <div className="event_card_price"> От {price} грн </div>
+                                    <div className="event_card_singer">  {headliner} </div>
+                                    <div className="event_card_date">  {date} </div>
+                                    <div className="event_card_city">  {capitalizeFirstLetter(`${city}`)} </div>
+                                    <div className="event_card_price">  ${price} </div>
                                 </div>
                                 </ Link >
                                 <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> + To Cart </button>
@@ -48,9 +48,10 @@ const Cards = ({event_list, header, cart, addToCart}) => {
                     )
                 })}
             
-            </div>
+            </div> }
+            
             <div className="view_more_btn_block">
-                {event_list.length > 0 && visible >= event_list.length? <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : <button className={event_list.length < 5 ? 'disabled_btn' : 'view_more_btn'} onClick={viewMoreEvents}>More Events</button>}
+                {event_list.length > 0 && visible >= event_list.length?  <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : <button className={event_list.length < 5 ? 'disabled_btn' : 'view_more_btn'} onClick={viewMoreEvents}>More Events</button>}
                 
             </div>
         </div>

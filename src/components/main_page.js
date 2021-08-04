@@ -30,22 +30,14 @@ function MainPage() {
         fetchEvents();
     }, []);
 
- 
-
-
   return (
-    
     <div className="App">
         <Header />
-        
         <Slider event_list={events} />
         <div className="Container">
-          
             <Cards event_list={events} header={'Upcoming events'}  />
             <Cards event_list={popularEvents} header={'The most popular events'}  />
-            <Cards event_list={latestEvents} header={'New on the site'}  />
-          
-
+            {latestEvents.length > 0 && <Cards event_list={latestEvents} header={'New on the site'}  />}
         </div>
         <SubscribeForm />
         <Footer />

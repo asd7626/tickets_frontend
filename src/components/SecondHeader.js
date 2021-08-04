@@ -12,8 +12,8 @@ const SecondHeader = () => {
     const value = useContext(Context);
 
     return (
-        <div className="second_header">
-            <div className="nav">
+        <div className="second_header" >
+            <div className="nav" >
                 <Link className="logo" to="/"> <span className="logo_tickets"> Tickets</span> <span className="logo_ua">UA</span> </Link>
                 <div className="city_menu">
                     <Link className="choose_city_link"  onClick={() => setIsOpenCity(!isOpenCity)}> City<DownOutlined /> </Link>
@@ -24,7 +24,7 @@ const SecondHeader = () => {
                     </div>
                 </div>
                 
-                <div className="hamburger_menu" onClick={() => setIsOpen(!isOpen)} >
+                <div className="hamburger_menu" onClick={() => setIsOpen(!isOpen)}>
                     <span></span>
                     <span></span>
                     <span></span>

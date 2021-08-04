@@ -16,9 +16,6 @@ const EventsByCategory = (props) => {
         setCategory(event_category);
     }
     
-    const capitalizeFirstLetter = (string) => {
-        return string[0].toUpperCase() + string.slice(1);
-    }
 
     useEffect(() => {
         getEvents(props);
@@ -27,7 +24,7 @@ const EventsByCategory = (props) => {
     return (
         <div className="events_by_category">
             <SecondHeader />
-            <Cards event_list={events} header={`Events in category: ${capitalizeFirstLetter(category)}`} />
+            <Cards event_list={events} header={`Events in category: ${category}`} />
         </div>
     )
 

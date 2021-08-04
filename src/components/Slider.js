@@ -10,7 +10,7 @@ function Slider({event_list}) {
 
     return (
         
-        <Carousel fade={true} pause={false} prevLabel={''} nextLabel={''}>
+        <Carousel pause={false} prevLabel={''} nextLabel={''}>
             
             {event_list.map((item, index) => {
                 const {id, poster, headliner, date, city} = item;

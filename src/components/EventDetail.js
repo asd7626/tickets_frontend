@@ -40,7 +40,7 @@ const EventDetail =  (props) =>  {
                         <div className="event_info event_detail_date_time"> <UserOutlined className="detail_icon" /> {ev.headliner} </div>
                         <div className="event_info event_detail_date_time"> <CalendarOutlined className="detail_icon" /> {ev.date} </div>
                         <div className="event_info event_detail_address"> <EnvironmentOutlined className="detail_icon" /> {capitalizeFirstLetter(`${ev.city}`)}, {ev.address} </div>
-                        <div className="event_info event_detail_price"> <TagOutlined className="detail_icon" /> {ev.price} грн </div>
+                        <div className="event_info event_detail_price"> <TagOutlined className="detail_icon" /> ${ev.price} </div>
                         <div className="event_info event_detail_popular"> <FireFilled className="detail_icon detail_icon_red" /> Popular Event </div>
                         <div className="buy_ticket_btn_block">
                             <button className="buy_ticket_btn" onClick={() => value.addToCart(ev)} > + To Cart </button>
