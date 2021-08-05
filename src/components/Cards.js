@@ -19,8 +19,8 @@ const Cards = ({event_list, header, cart, addToCart}) => {
     const value = useContext(Context);
 
     return( 
-        <div>
-            <div className="event_cards_header"> {header} </div>
+        <div style={{paddingTop: 20+'px'}}>
+            <p className="event_cards_header" > Events in {header} </p>
             {event_list.length === 0? <div className="no_events_div"> No Events Yet :) <Link to='/'><button className="back_btn"> Back To Index </button> </Link> </div> :
             <div className="event_cards">
                 {event_list.slice(0, visible).map((event_item) => {
@@ -34,8 +34,8 @@ const Cards = ({event_list, header, cart, addToCart}) => {
                                 </div>
                                 <div className="event_card_items">
                                     <div className="event_card_singer">  {headliner} </div>
-                                    <div className="event_card_date">  {date} </div>
-                                    <div className="event_card_city">  {capitalizeFirstLetter(`${city}`)} </div>
+                                    
+                                    <div className="event_card_city">  {capitalizeFirstLetter(`${city}`)} | {date} </div>
                                     <div className="event_card_price">  ${price} </div>
                                 </div>
                                 </ Link >
@@ -51,7 +51,10 @@ const Cards = ({event_list, header, cart, addToCart}) => {
             </div> }
             
             <div className="view_more_btn_block">
-                {event_list.length > 0 && visible >= event_list.length?  <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : <button className={event_list.length < 5 ? 'disabled_btn' : 'view_more_btn'} onClick={viewMoreEvents}>More Events</button>}
+                {event_list.length > 0 && visible >= event_list.length?  
+                <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : 
+                <button className={event_list.length < 5 ? 'disabled_btn' : 'view_more_btn'} onClick={viewMoreEvents}>More Events ({event_list.length - visible})</button>
+                }
                 
             </div>
         </div>

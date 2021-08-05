@@ -9,6 +9,8 @@ function App() {
 
      const [cart, setCart] = useState([]);
      const [totalValue, setTotalValue] = useState(0);
+     const [isOpenCity, setIsOpenCity] = useState(false);
+
 
      const addToCart = (eventToAdd) => {
          let val = totalValue;
@@ -37,7 +39,9 @@ function App() {
        addToCart,
        removeFromCart,
        clearOffCart,
-       totalValue
+       totalValue,
+       isOpenCity,
+       setIsOpenCity
      }
   
   return (

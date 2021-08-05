@@ -21,17 +21,17 @@ const EventDetail =  (props) =>  {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getEvent(props);
     }, [props]);
 
 
     const value = useContext(Context);
 
-    // {ev.headliner} {ev.city} {ev.date} {ev.description} {ev.address}
     return (
         <div className="event_detail_page">
             <SecondHeader/>
-            <div className="Container">
+            <div className="Container" onClick={() => value.setIsOpenCity(false)}>
                 <div className="event_detail_page_top">
                     <div className="poster_detail">
                         <img src={ev.poster} className="poster_detail_img" alt={ev.headliner} />

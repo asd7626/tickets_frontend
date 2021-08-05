@@ -1,12 +1,14 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, Fragment } from 'react';
 import Cards from './Cards';
 import SecondHeader from './SecondHeader';
-
+import Context from './Context';
 
 const EventsByCity = (props) => {
     const [events, setEvents] = useState([]);
     const [city, setCity] = useState();
+
+    const value = useContext(Context);
 
     const getEvents = async (props) => {
         const event_city = props.match.params.city;
@@ -22,14 +24,20 @@ const EventsByCity = (props) => {
     }
     
     useEffect(() => {
-        getEvents(props);
+        getEvents(props);        
     }, [props]);
 
+    
+
     return (
-        <div className="events_by_category">
+        <Fragment>
             <SecondHeader />
-            <Cards event_list={events} header={capitalizeFirstLetter(`${city}`)} />
-        </div>
+            <div onClick={() => value.setIsOpenCity(false)}>
+                <Cards event_list={events} header={capitalizeFirstLetter(`${city}`)}  />
+            </div>
+        </Fragment>
+        
+        
     )
 
 }

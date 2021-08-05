@@ -1,13 +1,15 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import {Fragment, useState, useEffect, useContext } from 'react';
 import Cards from './Cards';
 import SecondHeader from './SecondHeader';
-
+import Context from './Context';
 
 const EventsByCategory = (props) => {
     const [events, setEvents] = useState([]);
     const [category, setCategory] = useState();
     
+    const value = useContext(Context);
+
     const getEvents = async (props) => {
         const event_category = props.match.params.category;
         const response = await fetch(`http://127.0.0.1:8000/api/category/${event_category}`);
@@ -22,10 +24,12 @@ const EventsByCategory = (props) => {
     }, [props]);
 
     return (
-        <div className="events_by_category">
+        <Fragment>
             <SecondHeader />
-            <Cards event_list={events} header={`Events in category: ${category}`} />
-        </div>
+            <div onClick={() => value.setIsOpenCity(false)}>
+                <Cards event_list={events} header={` category: ${category}`} />
+            </div>
+        </Fragment>
     )
 
 }

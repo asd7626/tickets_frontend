@@ -4,20 +4,28 @@ import { DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import Context from './Context';
 
 
+
+
 const SecondHeader = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpenCity, setIsOpenCity] = useState(false);
+    
     
     const value = useContext(Context);
 
+    const closeMenu = () => {
+        if (value.isOpenCity) {
+            value.setIsOpenCity(false);
+        }
+    }
+
     return (
-        <div className="second_header" >
+        <div className="second_header" onClick={closeMenu}>
             <div className="nav" >
                 <Link className="logo" to="/"> <span className="logo_tickets"> Tickets</span> <span className="logo_ua">UA</span> </Link>
                 <div className="city_menu">
-                    <Link className="choose_city_link"  onClick={() => setIsOpenCity(!isOpenCity)}> City<DownOutlined /> </Link>
-                    <div className="city_list" isOpenCity={isOpenCity} style={{display: isOpenCity ? 'flex' : 'none'}} >
+                    <Link className="choose_city_link"  onClick={() => value.setIsOpenCity(!value.isOpenCity)}> City<DownOutlined /> </Link>
+                    <div className="city_list" isOpenCity={value.isOpenCity} style={{display: value.isOpenCity ? 'flex' : 'none'}} >
                         <Link to='/kyiv'> Kyiv </Link>
                         <Link to='/dnipro'> Dnipro </Link>
                         <Link to='/kharkiv'> Kharkiv </Link>

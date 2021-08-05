@@ -152,12 +152,14 @@ h1, h2, h3, h4, h5, h6 {
     
   }
 
-  .event_cards_header {
+  p.event_cards_header {
     font-family: 'Anton', sans-serif;
     margin: 20px auto;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
     text-align: center;
+    width: 100%;
+    
   }
 
   .event_cards {
@@ -170,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .event_card {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
 
     justify-self: center;
@@ -243,11 +245,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .event_card_date, .event_card_city {
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .event_card_price {
-    font-size: 16px;
+    font-size: 20px;
     
   }
 
@@ -423,9 +425,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .event_description {
       text-align: justify;
-      letter-spacing: 1px;
+      letter-spacing: 1px;  
+    }
 
-      
+    .event_description svg {
+      color:rgb(27, 240, 73);
+    }
+
+    .event_description_info {
+      padding: 2rem;
     }
 
 
@@ -539,7 +547,7 @@ h1, h2, h3, h4, h5, h6 {
     footer {
       
       padding: 10px;
-      border-top: 2px dashed lightgray;
+      
     }
 
     .footer_logo_icons {

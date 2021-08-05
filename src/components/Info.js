@@ -2,18 +2,12 @@ import React, {useState, useEffect} from 'react';
 import SecondHeader from './SecondHeader';
 import SubscribeForm from './SubscribeForm';
 import Footer from './Footer';
-import { toOrganizatorsText, guarantees } from './InfoText';
+import { howToBuyText, toOrganizatorsText, returnTicketsText, shippingText, guaranteesText } from './InfoText';
 
 
 function Info(props) {
 
     const [text, setText] = useState('');
-    
-
-    const howToBuyText = 'how to buy 1112gjfgjtjkgjrj';
-    
-    const returnTicketsText = 'return tickets jafjajajdjasjdas';
-    const shippingText = 'shipping bla bla bla';
     
 
     const getInfo = (props) => {
@@ -33,12 +27,13 @@ function Info(props) {
             setText(shippingText);
             
         } else if (info === 'guarantees') {
-            setText(guarantees);
+            setText(guaranteesText);
             
         }
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getInfo(props);
     }, [props]);
 
@@ -46,7 +41,7 @@ function Info(props) {
     return (
         <div>
             <SecondHeader />
-            <div className="event_description">
+            <div className="event_description" style={{paddingTop: 3+'rem', paddingBottom: 3+'rem', margin: 'auto', width: 80+'%' }}>
                 {text}
             </div>
             <SubscribeForm />
