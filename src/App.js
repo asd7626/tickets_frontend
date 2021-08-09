@@ -1,55 +1,68 @@
+import React, {useState} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import BaseRouter from './routes';
 import Context from './components/Context';
-import React, {useState} from 'react';
+import ContextQuantity from './components/Card';
 
 function App() {
 
-     //Cart
+  const [isOpenCity, setIsOpenCity] = useState(false);
+  const [cart, setCart] = useState([]);
+  
 
-     const [cart, setCart] = useState([]);
-     const [totalValue, setTotalValue] = useState(0);
-     const [isOpenCity, setIsOpenCity] = useState(false);
-
-
-     const addToCart = (eventToAdd) => {
-         let val = totalValue;
+  const addToCart = (eventToAdd) => {
          setCart([...cart, {... eventToAdd }]);
-         val += eventToAdd.price;
-         setTotalValue(val);
-         
      };
  
-     const removeFromCart = (eventToRemove) => {
-         let val = totalValue;
+  const removeFromCart = (eventToRemove) => {
          setCart(cart.filter((ev) => ev !== eventToRemove));
-         val -= eventToRemove.price;
-         setTotalValue(val);
      };
      
-     const clearOffCart = () => {
+  const clearOffCart = () => {
        setCart([]);
-       setTotalValue(0);
      }
-     
- 
+
+  // const handlePlus = () => {
+  //   setQuantity(prev => prev + 1);
+  // }
+
+  // const handleMinus = () => {
+  //     setQuantity(prev => prev - 1);
+  //     if(quantity === 1) {
+  //         setQuantity(1);
+  //     }
+  // }
+  
+  
+
+  
+
      //Все для контекста
      const value = {
-       cart,
-       addToCart,
-       removeFromCart,
-       clearOffCart,
-       totalValue,
-       isOpenCity,
-       setIsOpenCity
-     }
+        cart,
+        addToCart,
+        removeFromCart,
+        clearOffCart,
+        isOpenCity,
+        setIsOpenCity,
+        //handleMinus,
+        //handlePlus
+        
+      }
+
+   
+ 
+     
   
   return (
-    <Context.Provider value={value}>
-      <Router>
-        <BaseRouter/>
-      </Router>
-    </Context.Provider>
+    
+      <Context.Provider value={value}>
+        <Router>
+          <BaseRouter/>
+        </Router>
+      </Context.Provider>
+    
+    
   );
 }
 

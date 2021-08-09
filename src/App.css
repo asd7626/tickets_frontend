@@ -822,7 +822,7 @@ h1, h2, h3, h4, h5, h6 {
     
 
     .delete_ticket_icon:hover {
-      color: #000;
+      color: rgb(197, 64, 64);
     }
 
     .delete_ticket_icon {
@@ -857,6 +857,112 @@ h1, h2, h3, h4, h5, h6 {
 
     .back_btn:hover {
       background-color: rgb(9, 158, 9);
+    }
+
+
+    /* Cart */
+
+    .cart_item_whole {
+      display: flex;
+      max-width: 400px;
+      border: 2px solid rgb(139, 146, 132);
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .cart_item_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 0;
+    }
+
+    .quantity_number {
+      font-size: 25px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .total_number {
+      font-size: 16px;
+      font-weight: 500;
+      text-align:center;
+    }
+
+    .plus_minus_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .cart_item {
+      display: flex;
+      flex-direction: row;
+      
+      height: auto;
+      border-right: 1px solid rgb(241, 237, 237);
+      padding: 10px;
+      
+      position: relative;
+      
+    }
+
+    .cart_item_items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cart_item_items span {
+      font-size: 12px;
+      text-transform: uppercase;
+      color:rgb(168, 34, 34);
+    }
+
+    .cart_item_event {
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgb(241, 237, 237);
+      
+    }
+
+    .cart_item_place {
+      font-size: 16px;
+      font-weight: 700;
+      border-bottom: 1px solid rgb(241, 237, 237);
+      
+    }
+
+    .cart_item_date {
+      font-size: 16px;
+      font-weight: 700;
+      border-bottom: 1px solid rgb(241, 237, 237);
+    }
+
+    .cart_item_price {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .delete_ticket_icon:hover {
+      color: rgb(197, 64, 64);
+    }
+
+    .delete_ticket_icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: color .3s linear;
+      font-size: 30px;
+      border: 0;
     }
 
 }
