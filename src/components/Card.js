@@ -1,22 +1,13 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import Context from './Context';
-import ContextQuantity from './ContextQuantity';
+
 
 
 const Card = ({event_item, quantity}) => {
     
     const value = useContext(Context);
     
-
-    const handlePlus = () => {
-        //setQuantity(prev => prev + 1);
-    }
-  
-    const handleMinus = () => {
-        //setQuantity(prev => prev - 1);
-    }
-
     const capitalizeFirstLetter = (string) => {
         return string[0].toUpperCase() + string.slice(1);
     }

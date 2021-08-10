@@ -3,6 +3,7 @@ import Context from './Context';
 import SecondHeader from './SecondHeader';
 import {Link} from 'react-router-dom';
 import EventInCart from './EventInCart';
+import OrderForm from './OrderForm';
 
 
 function Cart ()  {
@@ -13,20 +14,23 @@ function Cart ()  {
     return (
         <div>
             <SecondHeader />
-            <div className="Container">
-            <h2> Your Order: </h2>
-            <h5> Amount of tickets: {value.cart.length} </h5>
-            <h5> Total:  </h5>
-            {value.cart.length === 0? <Link to='/'><button className="back_btn"> Back To Events </button> </Link> : <button className="clear_btn" onClick={value.clearOffCart}> Clear Cart </button>}  
-            <div className="">
+            <div className="cart_top_section">
+                <h2> Your Order: </h2>
+                <h5> Events: {value.cart.length} </h5>
+                <h5> Total:  </h5>
+                {value.cart.length === 0? <Link to='/'><button className="back_btn"> Back To Events </button> </Link> : <button className="clear_btn" onClick={value.clearOffCart}> Clear Cart </button>}
+            </div>
+              
+            <div className="cart_events">
                 {value.cart.map((item) => {
                     return (
                         <EventInCart item={item}  />
                     )
                 } )}
             </div>
-            </div>
+            <OrderForm />
         </div>
+        
     )
 
 }

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import Context from './Context';
 import { CloseSquareFilled } from '@ant-design/icons';
 
@@ -7,6 +7,8 @@ const EventInCart = ({item}) => {
 
     const value = useContext(Context);
     const [amount, setAmount] = useState(1);
+    const [total, setTotal] = useState(item.price);
+
     
     
     const handlePlus = () => {
