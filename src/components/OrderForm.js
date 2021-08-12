@@ -12,20 +12,22 @@ function OrderForm  ()  {
             <Form>
                 <InputGroup size="lg">
                     <InputGroup.Text id="inputGroup-sizing-lg">Name</InputGroup.Text>
-                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
+                    <FormControl className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
                 </InputGroup>
                 <br />
                 <InputGroup size="lg">
                     <InputGroup.Text id="inputGroup-sizing-lg">Email</InputGroup.Text>
-                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
+                    <FormControl className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
                 </InputGroup>
                 <br />
                 <InputGroup size="lg">
                     <InputGroup.Text id="inputGroup-sizing-lg">Phone</InputGroup.Text>
-                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
+                    <FormControl className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" required="true" />
                 </InputGroup>
-
-                <button type="submit"> Confirm Order</button>
+                <div style={{textAlign:'end'}}>
+                    <button className="confirm_order_btn" type="submit"> Create Order</button>
+                </div>
+                
             </Form>
         </div>
     )

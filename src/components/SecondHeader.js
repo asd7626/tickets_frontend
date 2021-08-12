@@ -22,7 +22,7 @@ const SecondHeader = () => {
     return (
         <div className="second_header" onClick={closeMenu}>
             <div className="nav" >
-                <Link className="logo" to="/"> <span className="logo_tickets"> Tickets</span> <span className="logo_ua">UA</span> </Link>
+                <Link className="logo_second_header" to="/"> <span className="logo_tickets_second"> Tickets</span> <span className="logo_ua_second">UA</span> </Link>
                 <div className="city_menu">
                     <Link className="choose_city_link"  onClick={() => value.setIsOpenCity(!value.isOpenCity)}> City<DownOutlined /> </Link>
                     <div className="city_list" isOpenCity={value.isOpenCity} style={{display: value.isOpenCity ? 'flex' : 'none'}} >

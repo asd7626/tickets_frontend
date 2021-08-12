@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import BaseRouter from './routes';
 import Context from './components/Context';
-import ContextQuantity from './components/Card';
+
 
 function App() {
 
   const [isOpenCity, setIsOpenCity] = useState(false);
   const [cart, setCart] = useState([]);
+  const [totalValue, setTotalValue] = useState([]);
   
 
   const addToCart = (eventToAdd) => {
@@ -20,22 +21,8 @@ function App() {
      
   const clearOffCart = () => {
        setCart([]);
+       setTotalValue(0);
      }
-
-  // const handlePlus = () => {
-  //   setQuantity(prev => prev + 1);
-  // }
-
-  // const handleMinus = () => {
-  //     setQuantity(prev => prev - 1);
-  //     if(quantity === 1) {
-  //         setQuantity(1);
-  //     }
-  // }
-  
-  
-
-  
 
      //Все для контекста
      const value = {
@@ -45,9 +32,8 @@ function App() {
         clearOffCart,
         isOpenCity,
         setIsOpenCity,
-        //handleMinus,
-        //handlePlus
-        
+        totalValue,
+        setTotalValue
       }
 
    

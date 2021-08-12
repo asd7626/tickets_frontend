@@ -7,10 +7,15 @@ const EventInCart = ({item}) => {
 
     const value = useContext(Context);
     const [amount, setAmount] = useState(1);
-    const [total, setTotal] = useState(item.price);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        setTotal(amount * item.price);
+        console.log(amount, total);
+    }, [amount, total])
 
     
-    
+
     const handlePlus = () => {
         setAmount(prev => prev + 1);
     }
@@ -37,7 +42,7 @@ const EventInCart = ({item}) => {
                 <button className="plus_minus_btn" onClick={handlePlus}> + </button>
                 <div className="quantity_number"> {amount} </div>
                 <button className="plus_minus_btn" onClick={handleMinus}> - </button>
-                <div className="total_number"> x{amount}: ${amount * item.price}  </div>
+                <div className="total_number"> x{amount}: ${total}  </div>
             </div>
         </div>
     )
