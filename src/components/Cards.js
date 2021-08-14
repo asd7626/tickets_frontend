@@ -11,12 +11,12 @@ const Cards = ({event_list, header}) => {
 
     return( 
         <div style={{paddingTop: 20+'px'}}>
-            <p className="event_cards_header" > Events in {header} </p>
+            <p className="event_cards_header" > {header} </p>
             {event_list.length === 0? <div className="no_events_div"> No Events Yet :) <Link to='/'><button className="back_btn"> Back To Index </button> </Link> </div> :
             <div className="event_cards">
                 {event_list.slice(0, visible).map((event_item) => {  
                     return (
-                            <Card event_item={event_item} quantity={1} /> 
+                            <Card event_item={event_item} /> 
                     )
                 })}
             </div> }

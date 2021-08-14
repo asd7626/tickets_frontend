@@ -1,18 +1,22 @@
 import React, {useState} from 'react';
 
+
+
 const SubscribeForm = () => {
 
     const [email, setEmail] = useState('');
+    const [showMessage, setShowMessage] = useState(false);
 
     const handleOnChange = (e) => {
         setEmail(e.target.value);
-        
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         const requestOptions = {
             method:'POST',
             headers: {'Content-Type': 'application/json'},
+            
             body: JSON.stringify({
                 email: email
             }),
@@ -20,6 +24,8 @@ const SubscribeForm = () => {
         fetch('http://127.0.0.1:8000/api/subscribeemail/', requestOptions)
         .then((response) => response.json())
         .then((data) => console.log(data))
+        setEmail('');
+        console.log(email);
     }
 
     return (
@@ -29,8 +35,9 @@ const SubscribeForm = () => {
             </div>
             
                 <div className="subscribe_input_btn">
-                    <input onChange={handleOnChange} className="subscribe_input" type="email" name="" placeholder="Your Email ..." />
-                    <button onClick={handleSubmit} className="subscribe_btn" type="submit"> Send </button>
+                    <input onChange={(e) => handleOnChange(e)} className="subscribe_input" type="email" name="email" value={email} placeholder="Your Email ..." />
+                    <button onClick={(e) => handleSubmit(e)} className="subscribe_btn" type="submit"> Send </button>
+                    
                 </div>
                 
             

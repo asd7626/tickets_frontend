@@ -4,7 +4,8 @@ import SecondHeader from './SecondHeader';
 import {Link} from 'react-router-dom';
 import EventInCart from './EventInCart';
 import OrderForm from './OrderForm';
-
+import SubscribeForm from './SubscribeForm';
+import Footer from './Footer';
 
 function Cart ()  {
     
@@ -29,7 +30,8 @@ function Cart ()  {
                 } )}
             </div>
             {value.cart.length > 0 && <OrderForm />}
-            
+            <SubscribeForm />
+            <Footer />
         </div>
         
     )
