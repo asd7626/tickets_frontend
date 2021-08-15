@@ -510,6 +510,7 @@ h1, h2, h3, h4, h5, h6 {
       display: grid;
       grid-auto-flow: row;
       justify-items: center;
+      position: relative;
     }
 
     .subscribe_header {
@@ -540,6 +541,28 @@ h1, h2, h3, h4, h5, h6 {
 
     .subscribe_input:focus {
       outline: 0;
+    }
+
+    .successful_email_sent_message {
+      position: absolute;
+      background-color: rgb(27, 240, 73);
+      color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 20px;
+      bottom: 0;
+      
+    }
+  
+    .error_email_sent_message {
+      position: absolute;
+      background-color: rgb(128, 14, 14);
+      color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 20px;
+      bottom: 0;
+      
     }
 
     .subscribe_btn {
@@ -905,6 +928,8 @@ span.logo_tickets_second, span.logo_ua_second {
   }
 
   /* Subscribe Form */
+
+  
 
   .subscribe_input {
     width: 250px;
