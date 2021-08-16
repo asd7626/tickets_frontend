@@ -553,7 +553,7 @@ h1, h2, h3, h4, h5, h6 {
       bottom: 0;
       
     }
-  
+
     .error_email_sent_message {
       position: absolute;
       background-color: rgb(128, 14, 14);
@@ -564,6 +564,8 @@ h1, h2, h3, h4, h5, h6 {
       bottom: 0;
       
     }
+
+    
 
     .subscribe_btn {
       padding: 12px 12px;

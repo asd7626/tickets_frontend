@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import {Transition} from 'react-transition-group';
 
 
 const SubscribeForm = () => {
@@ -50,27 +50,24 @@ const SubscribeForm = () => {
             <div className="subscribe_header">
                 SUBSCRIBE FOR FUTURE UPDATES
             </div>
-
-            
-            
             
             <div className="subscribe_input_btn">
                 <input onChange={(e) => handleOnChange(e)} className="subscribe_input" type="email" name="email" value={email} placeholder="Your Email ..." />
                 <button onClick={(e) => handleSubmit(e)} className="subscribe_btn" type="submit"> Send </button>
-            </div>  
+            </div> 
+
             {showMessage &&
-                
                 <div className="successful_email_sent_message">
                     <strong>Your email has been saved :) </strong>
                 </div>
-            
-        }
+            }
 
-        {errorMessage &&
-            <div className="error_email_sent_message">
-                <strong>Wrong Email. Try again, please. </strong>
-            </div>
-        } 
+            {errorMessage &&
+                <div className="error_email_sent_message">
+                    <strong>Wrong Email. Try again, please. </strong>
+                </div>
+            } 
+            
         </div>
     
     )
