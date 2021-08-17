@@ -29,7 +29,7 @@ function Cart ()  {
                     )
                 } )}
             </div>
-            {value.cart.length > 0 && <OrderForm />}
+            <OrderForm />
             <SubscribeForm />
             <Footer />
         </div>

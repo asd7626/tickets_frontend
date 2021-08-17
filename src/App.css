@@ -565,6 +565,17 @@ h1, h2, h3, h4, h5, h6 {
       
     }
 
+    .successful_order_message {
+      margin: 0 auto;
+      width: 270px;
+      height: auto;
+      background-color: rgb(27, 240, 73);
+      color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 20px;
+    }
+
     
 
     .subscribe_btn {
