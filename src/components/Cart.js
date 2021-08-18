@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Context from './Context';
 import SecondHeader from './SecondHeader';
 import {Link} from 'react-router-dom';
@@ -10,7 +10,10 @@ import Footer from './Footer';
 function Cart ()  {
     
     const value = useContext(Context);
-    
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     
     return (
         <div>

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import SecondHeader from './SecondHeader';
+import SubscribeForm from './SubscribeForm';
 import Footer from './Footer';
 import {UserOutlined, CalendarOutlined, EnvironmentOutlined, TagOutlined, FireFilled } from '@ant-design/icons';
 import Context from './Context';
@@ -47,14 +48,15 @@ const EventDetail =  (props) =>  {
                         </div>
                     </div>  
                 </div>
-                <div className="event_description">
-                        <div className="event_detail_header"> About This Event:</div>
+                <div className="event_description" style={{marginBottom: 50+'px'}}>
+                        <div className="event_detail_header"> About This Event</div>
                         {ev.description}
                 </div>
                  
                     
                 
             </div>
+            <SubscribeForm />
             <Footer />
         </div>
     )

@@ -12,9 +12,10 @@ function App() {
   const [eventIds, setEventIds] = useState([]);
 
   const addToCart = (eventToAdd) => {
-         setCart([...cart, {... eventToAdd }]);
-         setEventIds([... eventIds, eventToAdd.id]);
-         
+        if(!eventIds.includes(eventToAdd.id)) {
+          setCart([...cart, {... eventToAdd }]);
+          setEventIds([... eventIds, eventToAdd.id]);
+        }
      };
  
   const removeFromCart = (eventToRemove) => {
@@ -24,7 +25,7 @@ function App() {
      
   const clearOffCart = () => {
        setCart([]);
-       setTotalValue(0);
+       setEventIds([]);
      }
 
      //Все для контекста
@@ -38,7 +39,8 @@ function App() {
         setIsOpenCity,
         totalValue,
         setTotalValue,
-        eventIds
+        eventIds,
+        setEventIds
       }
 
    

@@ -506,7 +506,7 @@ h1, h2, h3, h4, h5, h6 {
       background: #000000;  
       background: -webkit-linear-gradient(to right, #434343, #000000);  
       background: linear-gradient(to right, #434343, #000000); 
-      padding: 15px 0;
+      padding: 15px 0 35px 0;
       display: grid;
       grid-auto-flow: row;
       justify-items: center;
@@ -545,24 +545,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .successful_email_sent_message {
       position: absolute;
-      background-color: rgb(27, 240, 73);
-      color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 20px;
+      color: rgb(27, 240, 73);
+      font-size: 25px;
       bottom: 0;
-      
     }
 
     .error_email_sent_message {
       position: absolute;
-      background-color: rgb(128, 14, 14);
-      color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 20px;
+      color: red;
+      font-size: 25px;
       bottom: 0;
-      
     }
 
     .successful_order_message {

@@ -52,7 +52,7 @@ const SubscribeForm = () => {
             </div>
             
             <div className="subscribe_input_btn">
-                <input onChange={(e) => handleOnChange(e)} className="subscribe_input" type="email" name="email" value={email} placeholder="Your Email ..." />
+                <input onChange={(e) => handleOnChange(e)} className="subscribe_input" type="email" name="email" value={email} placeholder="Enter Your Email" />
                 <button onClick={(e) => handleSubmit(e)} className="subscribe_btn" type="submit"> Send </button>
             </div> 
 

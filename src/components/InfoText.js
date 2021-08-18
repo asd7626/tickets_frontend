@@ -27,7 +27,7 @@ export const toOrganizatorsText = (
 
         <p> We help organizers of events of any scale: from small (for several tens of people), to stadium concerts and festivals for tens of thousands of spectators. For everyone, we become caring, empathetic and understanding to the other. Or just a reliable partner if you love to be friends very much to Vine 🙂 </p>
 
-        <p style={{fontWeight: 'bold'}}> Concert.ua is one of the best Flower services, it is a high-quality IT and marketing support for events and a team of professionals who make it all work harmoniously. </p>
+        <p style={{fontWeight: 'bold'}}> We are one of the best services, it is a high-quality IT and marketing support for events and a team of professionals who make it all work harmoniously. </p>
 
         <p> We offer: </p>
 
@@ -48,9 +48,9 @@ export const returnTicketsText = (
 
         <p style={{fontWeight: 'bold', fontSize: 30+'px'}}>Return terms</p>
         <p>In accordance with the legislation of Ukraine, refunds for tickets to entertainment events are carried out by the organizer and only in case of cancellation of the event.
-        Concert.ua conducts a refund if the organizer has provided an appropriate order, as well as the required amount of funds.</p>
+        We conduct a refund if the organizer has provided an appropriate order, as well as the required amount of funds.</p>
 
-        <p>Please pay attention: Concert.ua does not return funds in cash at ticket offices. Refunds are made only by bank transfer to the buyer's card account.</p>
+        <p>Please pay attention: We do not return funds in cash at ticket offices. Refunds are made only by bank transfer to the buyer's card account.</p>
     </div>
 )
 
