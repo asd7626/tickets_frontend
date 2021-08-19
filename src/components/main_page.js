@@ -39,12 +39,13 @@ function MainPage() {
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchEvents();
     }, []);
 
   return (
     <div className="App">
-        <Header />
+        {carouselEvents.length === 0? <LoaderComponent /> : <Header />}
         <Slider event_list={carouselEvents} />
         <div className="Container">
             <Cards event_list={events} header={'All Events'}   />

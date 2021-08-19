@@ -1,6 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import {Link} from 'react-router-dom';
+import LoaderComponent from './Loader';
+
 
 function Slider({event_list}) {
     
@@ -8,6 +10,7 @@ function Slider({event_list}) {
         return string[0].toUpperCase() + string.slice(1);
     }
 
+    
     return (
         
         <Carousel pause={false} prevLabel={''} nextLabel={''}>
@@ -30,7 +33,7 @@ function Slider({event_list}) {
                                 </Carousel.Caption>
                             </Link>
                         </Carousel.Item>
-                    
+                
                     
                             
                         
@@ -39,10 +42,11 @@ function Slider({event_list}) {
                 )
                 })}
          </Carousel> 
-        
-          
             
+          
+        
     )
+            
 }
 
 export default Slider;

@@ -5,7 +5,7 @@ import Context from './Context';
 import LoaderComponent from './Loader';
 
 const Cards = ({event_list, header}) => {
-    const [visible, setVisible] = useState(2);
+    const [visible, setVisible] = useState(3);
     
     
     const viewMoreEvents = () => {
@@ -19,7 +19,7 @@ const Cards = ({event_list, header}) => {
             <p className="event_cards_header" > {header} </p>
             
             
-            {event_list.length === 0? <div className="no_events_div"> No Events Yet :) <Link to='/'><button className="back_btn"> Back To Index </button> </Link> </div> :
+            
             <div className="event_cards">
                 {event_list.slice(0, visible).map((event_item) => {  
                     return (
