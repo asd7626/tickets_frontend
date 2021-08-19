@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import BaseRouter from './routes';
 import Context from './components/Context';
@@ -10,6 +10,9 @@ function App() {
   const [cart, setCart] = useState([]);
   const [totalValue, setTotalValue] = useState([]);
   const [eventIds, setEventIds] = useState([]);
+  
+
+  
 
   const addToCart = (eventToAdd) => {
         if(!eventIds.includes(eventToAdd.id)) {
@@ -26,6 +29,7 @@ function App() {
   const clearOffCart = () => {
        setCart([]);
        setEventIds([]);
+       
      }
 
      //Все для контекста
@@ -40,7 +44,8 @@ function App() {
         totalValue,
         setTotalValue,
         eventIds,
-        setEventIds
+        setEventIds,
+        
       }
 
    
@@ -50,7 +55,7 @@ function App() {
   return (
     
       <Context.Provider value={value}>
-        <Router>
+        <Router >
           <BaseRouter/>
         </Router>
       </Context.Provider>

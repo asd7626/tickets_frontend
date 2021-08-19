@@ -2,9 +2,11 @@ import '../App.css';
 import Cards from './Cards';
 import Slider from './Slider';
 import Header from './Header';
+import {useState, useEffect, useContext} from 'react';
 import SubscribeForm from './SubscribeForm';
 import Footer from './Footer';
-import {useState, useEffect} from 'react';
+import Context from './Context';
+import LoaderComponent from './Loader';
 
 
 function MainPage() {
@@ -12,8 +14,10 @@ function MainPage() {
   const [popularEvents, setPopularEvents] = useState([]);
   const [latestEvents, setLatestEvents] = useState([]);
   const [carouselEvents, setCarouselEvents] = useState([]);
+  
 
     const fetchEvents = async () => {
+      
         const response = await fetch('http://127.0.0.1:8000/api/');
         const second_response = await fetch('http://127.0.0.1:8000/api/popular');
         const third_response = await fetch('http://127.0.0.1:8000/api/latest/');
@@ -24,10 +28,13 @@ function MainPage() {
         const latest_events = await third_response.json();
         const carousel_events = await fourth_response.json();
 
+        
         setEvents(events);
+        
         setPopularEvents(popular_events);
         setLatestEvents(latest_events);
         setCarouselEvents(carousel_events);
+        
 
     }
 
@@ -40,7 +47,7 @@ function MainPage() {
         <Header />
         <Slider event_list={carouselEvents} />
         <div className="Container">
-            <Cards event_list={events} header={'All Events'}  />
+            <Cards event_list={events} header={'All Events'}   />
             <Cards event_list={popularEvents} header={'Most Popular Events'}  />
             {latestEvents.length > 0 && <Cards event_list={latestEvents} header={'New On The Site'}  />}
         </div>

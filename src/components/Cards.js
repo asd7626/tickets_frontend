@@ -1,17 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import Card from './Card';
+import Context from './Context';
+import LoaderComponent from './Loader';
 
 const Cards = ({event_list, header}) => {
     const [visible, setVisible] = useState(2);
+    
     
     const viewMoreEvents = () => {
         setVisible((prev) => prev + 2);
     }
 
-    return( 
-        <div style={{paddingTop: 20+'px'}}>
+    return(
+        
+        <div style={{paddingTop: 20+'px'}} >
+            
             <p className="event_cards_header" > {header} </p>
+            
+            
             {event_list.length === 0? <div className="no_events_div"> No Events Yet :) <Link to='/'><button className="back_btn"> Back To Index </button> </Link> </div> :
             <div className="event_cards">
                 {event_list.slice(0, visible).map((event_item) => {  
@@ -27,6 +34,7 @@ const Cards = ({event_list, header}) => {
                 }
             </div>
         </div>
+        
     )
 }
 

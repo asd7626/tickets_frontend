@@ -46,7 +46,7 @@ const SubscribeForm = () => {
     }
 
     return (
-        <div className="subscribe_block">
+        <div className="subscribe_block" style={{marginTop: 30+'px'}}>
             <div className="subscribe_header">
                 SUBSCRIBE FOR FUTURE UPDATES
             </div>

@@ -4,6 +4,7 @@ import SubscribeForm from './SubscribeForm';
 import Footer from './Footer';
 import {UserOutlined, CalendarOutlined, EnvironmentOutlined, TagOutlined, FireFilled } from '@ant-design/icons';
 import Context from './Context';
+import LoaderComponent from './Loader';
 
 const EventDetail =  (props) =>  {
 
@@ -23,15 +24,22 @@ const EventDetail =  (props) =>  {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        getEvent(props);
+        
+        getEvent(props)
+         
+        
     }, [props]);
 
 
     const value = useContext(Context);
 
     return (
+        
         <div className="event_detail_page">
             <SecondHeader/>
+            {ev.length === 0 ? <LoaderComponent /> :
+
+            
             <div className="Container" onClick={() => value.setIsOpenCity(false)}>
                 <div className="event_detail_page_top">
                     <div className="poster_detail">
@@ -56,9 +64,11 @@ const EventDetail =  (props) =>  {
                     
                 
             </div>
+            }
             <SubscribeForm />
             <Footer />
         </div>
+        
     )
 }
 

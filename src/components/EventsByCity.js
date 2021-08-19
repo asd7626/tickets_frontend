@@ -3,6 +3,9 @@ import { useState, useEffect, useContext, Fragment } from 'react';
 import Cards from './Cards';
 import SecondHeader from './SecondHeader';
 import Context from './Context';
+import SubscribeForm from './SubscribeForm';
+import Footer from './Footer';
+import LoaderComponent from './Loader';
 
 const EventsByCity = (props) => {
     const [events, setEvents] = useState([]);
@@ -24,7 +27,8 @@ const EventsByCity = (props) => {
     }
     
     useEffect(() => {
-        getEvents(props);        
+        window.scrollTo(0, 0);
+        getEvents(props);
     }, [props]);
 
     
@@ -32,9 +36,13 @@ const EventsByCity = (props) => {
     return (
         <Fragment>
             <SecondHeader />
-            <div onClick={() => value.setIsOpenCity(false)}>
-                <Cards event_list={events} header={capitalizeFirstLetter(`${city}`)}  />
-            </div>
+            {events.length === 0?  <LoaderComponent /> :
+                <div onClick={() => value.setIsOpenCity(false)}>
+                    <Cards event_list={events} header={capitalizeFirstLetter(`${city}`)}  />
+                </div>
+            }
+            <SubscribeForm />
+            <Footer />
         </Fragment>
         
         

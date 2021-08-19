@@ -13,6 +13,7 @@ function Cart ()  {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        
     });
     
     return (
@@ -21,7 +22,7 @@ function Cart ()  {
             <div className="cart_top_section">
                 <h2> Your Order: </h2>
                 <h5> Events: {value.cart.length} </h5>
-                <h5> Total: {value.totalValue}  </h5>
+                <h5> Total: {}  </h5>
                 {value.cart.length === 0? <Link to='/'><button className="back_btn"> Back To Events </button> </Link> : <button className="clear_btn" onClick={value.clearOffCart}> Clear Cart </button>}
             </div>
               

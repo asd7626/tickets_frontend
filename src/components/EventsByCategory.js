@@ -3,6 +3,9 @@ import {Fragment, useState, useEffect, useContext } from 'react';
 import Cards from './Cards';
 import SecondHeader from './SecondHeader';
 import Context from './Context';
+import SubscribeForm from './SubscribeForm';
+import Footer from './Footer';
+import LoaderComponent from './Loader';
 
 const EventsByCategory = (props) => {
     const [events, setEvents] = useState([]);
@@ -20,15 +23,20 @@ const EventsByCategory = (props) => {
     
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         getEvents(props);
     }, [props]);
 
     return (
         <Fragment>
             <SecondHeader />
-            <div onClick={() => value.setIsOpenCity(false)}>
-                <Cards event_list={events} header={` category: ${category}`} />
-            </div>
+            {events.length === 0? <LoaderComponent /> :
+                <div onClick={() => value.setIsOpenCity(false)}>
+                    <Cards event_list={events} header={` category: ${category}`} />
+                </div>
+            }
+            <SubscribeForm />
+            <Footer />
         </Fragment>
     )
 

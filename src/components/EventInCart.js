@@ -11,7 +11,7 @@ const EventInCart = ({item}) => {
 
     useEffect(() => {
         setTotal(amount * item.price);
-        console.log(amount, total);
+        
     }, [amount, total])
 
     
