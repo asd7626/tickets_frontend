@@ -11,6 +11,7 @@ const EventsByCity = (props) => {
     const [allEvents, setAllEvents] = useState([]);
     const [events, setEvents] = useState([]);
     const [city, setCity] = useState();
+    const [category, setCategory] = useState('All');
 
     const value = useContext(Context);
 
@@ -36,10 +37,12 @@ const EventsByCity = (props) => {
     const filterItems = (category) => {
         if(category === 'all') {
             setEvents(allEvents);
+            setCategory('All');
             return;
         }
         const eventsByCategory = allEvents.filter((ev) => ev.category === category);
         setEvents(eventsByCategory);
+        setCategory(category);
     }
 
     return (
@@ -61,7 +64,7 @@ const EventsByCity = (props) => {
             {events.length === 0?  <LoaderComponent /> :
                 
                     <div onClick={() => value.setIsOpenCity(false)}>
-                        <Cards event_list={events} header={capitalizeFirstLetter(`${city}`)}  />
+                        <Cards event_list={events} header={capitalizeFirstLetter(`${city}`) + ` (catergory: ${category})`}  />
                     </div>
                     
                 

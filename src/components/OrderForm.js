@@ -130,20 +130,20 @@ function OrderForm  ()  {
                 
                 <div style={{position:'relative'}}>
                     {nameErrorMessage &&
-                        <div style={{position:'absolute', left:0, fontSize:30+'px', color: 'red', fontWeight: 700}}>
+                        <div style={{position:'absolute', left:0, fontSize:25+'px', color: 'red', fontWeight: 700}}>
                             <strong> Empty Name </strong>
                         </div>
                     }
 
                     {emailErrorMessage &&
-                        <div style={{position:'absolute', left:0, fontSize:30+'px', color: 'red', fontWeight: 700}}>
-                            <strong> Wrong Email Address </strong>
+                        <div style={{position:'absolute', left:0, fontSize:25+'px', color: 'red', fontWeight: 700}}>
+                            <strong> Wrong Email </strong>
                         </div>
                     }
 
                     {phoneErrorMessage &&
-                        <div style={{position:'absolute', left:0, fontSize:30+'px', color: 'red', fontWeight: 700}}>
-                            <strong> Wrong Phone Number </strong>
+                        <div style={{position:'absolute', left:0, fontSize:25+'px', color: 'red', fontWeight: 700}}>
+                            <strong> Wrong Phone </strong>
                         </div>
                     }
 

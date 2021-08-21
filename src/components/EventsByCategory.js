@@ -32,7 +32,7 @@ const EventsByCategory = (props) => {
             <SecondHeader />
             {events.length === 0? <LoaderComponent /> :
                 <div onClick={() => value.setIsOpenCity(false)}>
-                    <Cards event_list={events} header={` category: ${category}`} />
+                    <Cards event_list={events} header={`All events in category: ${category}`} />
                 </div>
             }
             <SubscribeForm />

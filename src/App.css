@@ -549,6 +549,7 @@ h1, h2, h3, h4, h5, h6 {
       color: rgb(27, 240, 73);
       font-size: 25px;
       bottom: 0;
+      text-align: center;
     }
 
     .error_email_sent_message {
@@ -556,6 +557,7 @@ h1, h2, h3, h4, h5, h6 {
       color: red;
       font-size: 25px;
       bottom: 0;
+      text-align: center;
     }
 
     .successful_order_message {
@@ -1567,11 +1569,13 @@ span.logo_tickets_second, span.logo_ua_second {
 
 
   .cart_events {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    column-gap: 30px;
   }
 
   .cart_item_whole {
-    max-width: 320px;
+    max-width: 370px;
   }
   
 }
@@ -1597,9 +1601,7 @@ span.logo_tickets_second, span.logo_ua_second {
     max-width: 340px;
   }
 
-  .cart_item_whole {
-    max-width: 340px;
-  }
+  
 }
 
 
@@ -1634,12 +1636,20 @@ span.logo_tickets_second, span.logo_ua_second {
     max-width: 360px;
   }
 
-  .cart_item_whole {
-    max-width: 360px;
-  }
+  
 
   .order_form {
-    width: 60%;
+    width: 75%;
+  }
+
+  .cart_events {
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    column-gap: 30px;
+  }
+
+  .cart_item_whole {
+    max-width: 370px;
   }
 }
 
@@ -1751,6 +1761,18 @@ span.logo_tickets_second, span.logo_ua_second {
   .cart_item_whole {
     max-width: 380px;
   }
+
+  .order_form {
+    width: 75%;
+  }
+
+  .cart_events {
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    column-gap: 30px;
+  }
+
+  
 }
 
 

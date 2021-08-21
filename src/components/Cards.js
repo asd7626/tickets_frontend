@@ -26,7 +26,7 @@ const Cards = ({event_list, header}) => {
                             <Card event_item={event_item} /> 
                     )
                 })}
-            </div> }
+            </div> 
             <div className="view_more_btn_block">
                 {event_list.length > 0 && visible >= event_list.length?  
                 <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : 

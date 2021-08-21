@@ -54,19 +54,20 @@ const SubscribeForm = () => {
             <div className="subscribe_input_btn">
                 <input onChange={(e) => handleOnChange(e)} className="subscribe_input" type="email" name="email" value={email} placeholder="Enter Your Email" />
                 <button onClick={(e) => handleSubmit(e)} className="subscribe_btn" type="submit"> Send </button>
+                {showMessage &&
+                <div className="successful_email_sent_message">
+                    <strong>Your email has been saved</strong>
+                </div>
+                }
+
+                {errorMessage &&
+                    <div className="error_email_sent_message">
+                        <strong>Wrong Email</strong>
+                    </div>
+                }
             </div> 
 
-            {showMessage &&
-                <div className="successful_email_sent_message">
-                    <strong>Your email has been saved :) </strong>
-                </div>
-            }
-
-            {errorMessage &&
-                <div className="error_email_sent_message">
-                    <strong>Wrong Email. Try again, please. </strong>
-                </div>
-            } 
+             
             
         </div>
     

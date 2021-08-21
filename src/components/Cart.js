@@ -25,7 +25,7 @@ function Cart ()  {
                 <h5> Total: {}  </h5>
                 {value.cart.length === 0? <Link to='/'><button className="back_btn"> Back To Events </button> </Link> : <button className="clear_btn" onClick={value.clearOffCart}> Clear Cart </button>}
             </div>
-              
+            
             <div className="cart_events">
                 {value.cart.map((item) => {
                     return (
