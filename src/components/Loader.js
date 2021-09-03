@@ -9,7 +9,7 @@ const LoaderComponent = () => {
         <div style={{ height:100+'vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
             <Loader
             type="Oval"
-            color="green"
+            color="aqua"
             height={100}
             width={100}
              //3 secs

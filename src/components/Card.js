@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import Context from './Context';
-import {UserOutlined, CalendarOutlined, EnvironmentOutlined, TagOutlined, FireFilled } from '@ant-design/icons';
+import {ShoppingCartOutlined } from '@ant-design/icons';
 
 
 const Card = ({event_item}) => {
@@ -23,9 +23,16 @@ const Card = ({event_item}) => {
                                     
                 <div className="event_card_city"> {capitalizeFirstLetter(`${event_item.city}`)} | {event_item.date} </div>
                 <div className="event_card_price">  ${event_item.price} </div>
+                <div className="buy_ticket_btn_on_card_block">
+                    <Link>
+                        <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> <ShoppingCartOutlined/> Cart </button> 
+                    </Link>
+                </div>
             </div>
+            
+            
             </ Link >
-            <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> + To Cart </button>                   
+                              
         </div>
     
     )

@@ -25,7 +25,7 @@ const Header = () => {
       }, [scrollTop]);
 
     return (
-        <header style={{background: scrollTop > 0 ? 'rgb(128, 14, 14)' : 'transparent', backgroundColor: isOpen && scrollTop === 0 ? 'black' : 'transparent'}}>
+        <header style={{background: scrollTop > 0 ? '#000' : 'transparent', backgroundColor: isOpen && scrollTop === 0 ? 'black' : 'transparent'}}>
             <div className="nav">
                 <Link className="logo" to="/"> <span className="logo_tickets"> Tickets</span> <span className="logo_ua">UA</span> </Link>
                 <div className="city_menu">

@@ -41,7 +41,7 @@ function Info(props) {
     return (
         <div>
             <SecondHeader />
-            <div className="event_description" style={{paddingTop: 3+'rem', paddingBottom: 3+'rem', margin: 'auto', width: 80+'%' }}>
+            <div className="event_description" style={{color: '#fff', paddingTop: 3+'rem', paddingBottom: 3+'rem', margin: 'auto', width: 80+'%' }}>
                 {text}
             </div>
             <SubscribeForm />

@@ -29,7 +29,7 @@ const Cards = ({event_list, header}) => {
             </div> 
             <div className="view_more_btn_block">
                 {event_list.length > 0 && visible >= event_list.length?  
-                <p style={{fontSize: 30+'px', fontWeight:700}}>That's all here :)</p> : 
+                <p style={{fontSize: 30+'px', fontWeight:700, color: '#fff' }}>That's all here :)</p> : 
                 <button className={event_list.length < 5 ? 'disabled_btn' : 'view_more_btn'} onClick={viewMoreEvents}>More Events ({event_list.length - visible})</button>
                 }
             </div>

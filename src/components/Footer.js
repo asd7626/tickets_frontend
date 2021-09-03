@@ -1,5 +1,5 @@
 import React from 'react';
-import {FacebookOutlined, TwitterOutlined, YoutubeOutlined, InstagramOutlined} from '@ant-design/icons';
+import {FacebookFilled, TwitterCircleFilled, YoutubeFilled, InstagramFilled} from '@ant-design/icons';
 import {Link} from 'react-router-dom';
 
 const Footer = () => {
@@ -8,10 +8,10 @@ const Footer = () => {
             <div className="footer_logo_icons">
                 <div className="footer_logo"> TICKETS.UA </div>
                 <div className="social_media">
-                    <FacebookOutlined />
-                    <TwitterOutlined />
-                    <YoutubeOutlined />
-                    <InstagramOutlined />
+                    <FacebookFilled />
+                    <TwitterCircleFilled />
+                    <YoutubeFilled />
+                    <InstagramFilled />
                 </div>
             </div>
 

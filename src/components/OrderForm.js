@@ -111,7 +111,7 @@ function OrderForm  ()  {
             }   
 
             <div className="order_form">
-                <h5>Confirm Your Order Please: </h5>
+                <h5 style={{color: '#fff'}}>Confirm Your Order Please: </h5>
                 
                     <InputGroup size="lg" style={{marginBottom:15+'px'}}>
                         <InputGroup.Text style={{width:85+'px'}} id="inputGroup-sizing-lg">Name</InputGroup.Text>
@@ -120,7 +120,7 @@ function OrderForm  ()  {
 
                     <InputGroup size="lg" style={{marginBottom:15+'px'}}>
                         <InputGroup.Text style={{width:85+'px'}} id="inputGroup-sizing-lg">Email</InputGroup.Text>
-                        <FormControl placeholder="Enter Your Email" disabled={value.cart.length===0} value={email} onChange={(e) => handleOnChangeEmail(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="email" required />
+                        <FormControl placeholder="Example: Ivanov@gmail.com" disabled={value.cart.length===0} value={email} onChange={(e) => handleOnChangeEmail(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="email" required />
                     </InputGroup>
                     
                     <InputGroup  size="lg">

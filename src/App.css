@@ -5,9 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 body {
-  background: #ECE9E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,7 +21,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-
+button {
+  font-family: 'Anton', sans-serif;
+}
 
 
 /* 320x480 */
@@ -120,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .menu_link:hover {
-    color: rgb(27, 240, 73);
+    color: aqua;
   }
 
   .hamburger_menu {
@@ -141,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hamburger_menu:hover span {
-    background-color: rgb(27, 240, 73);
+    background-color: aqua;
   }
 
   a.cart_link {
@@ -152,12 +155,12 @@ h1, h2, h3, h4, h5, h6 {
   .cart_icon {
 
     font-size: 30px;
-    color: rgb(27, 240, 73);
+    color: aqua;
   }
 
   span.cart_number {
     font-size: 23px;
-    color: rgb(27, 240, 73);
+    color: aqua;
     text-decoration: none;
   }
 
@@ -174,6 +177,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-align: center;
     width: 100%;
+    color: #fff;
     
   }
 
@@ -187,25 +191,22 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .event_card {
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-
+    
+    border: 1px solid #fff;
     justify-self: center;
     width: 100%;
     max-width: 300px;
     display: grid;
     grid-template-columns: 1fr;
-    border: 1px solid rgb(212, 207, 207);
     text-align: center;
     
     cursor: pointer;
+    transition: all .3s linear;
   }
 
   .event_card:hover {
-    box-shadow: -20px 20px 0 -17px #eee,
-20px -20px 0 -17px #eee,
-20px 20px 0 -20px #592385,
-0 0 0 2px #592385;
+    border-color: aqua;
+    
   }
 
   .event_card a {
@@ -228,6 +229,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     padding: 0 0 50% 0;
     transition: all .4s linear;
+    
   }
   
   .event_card_img_wrapper img {
@@ -242,15 +244,16 @@ h1, h2, h3, h4, h5, h6 {
   
   .event_card_items {
     background: #ECE9E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family: 'Playfair Display', serif;
+background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1px;
     background-color: #fff;
-    padding: 2px 0;
+    padding: 5px 0;
     transition: all .4s linear;
   }
   
@@ -267,27 +270,29 @@ h1, h2, h3, h4, h5, h6 {
   .event_card_price {
     font-size: 20px;
     font-weight: 500;
+    margin-bottom: 10px;
   }
 
- 
-
+  
   .view_more_btn_block {
     text-align: center;
 
   }
 
   .view_more_btn {
+    font-family: 'Anton', sans-serif;
     padding: 15px;
-    background-color: rgb(128, 14, 14);
-    color: #fff;
+    background-color: aqua;
+    color: #000;
     border: 0;
-    font-size: 20px;
+    font-size: 22px;
+    
     cursor: pointer;
     transition: all .3s linear;
   }
 
   .view_more_btn:hover {
-    background-color: red;
+    background-color: rgb(35, 199, 199);
   }
 
   .disabled_btn {
@@ -342,6 +347,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .poster_detail {
+      border: 1px solid aqua;
       margin-top: 20px;
       position: relative;
       overflow: hidden;
@@ -361,11 +367,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .event_detail_info {
+      
+      
       font-family: 'Anton', sans-serif;
       margin-top: 20px;
       display: grid;
       grid-auto-flow: row;
       row-gap: 15px;
+      color: #fff;
       
     }
 
@@ -375,10 +384,12 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 25px;
       text-align: start;
       font-weight: 900;
+      color: #fff;
       
     }
 
     .event_info {
+      border-bottom: 1px solid aqua;
       display: flex;
       column-gap: 10px;
       font-size: 20px;
@@ -386,6 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .detail_icon {
       font-size: 24px;
+      color: aqua;
     }
 
     
@@ -406,31 +418,38 @@ h1, h2, h3, h4, h5, h6 {
 
     .buy_ticket_btn {
       font-family: 'Anton', sans-serif;
-      padding: 15px;
-      background-color: rgb(27, 240, 73);
-      color: #fff;
+      padding: 10px;
+      width: 100px;
+      height: 50px;
+      background-color: aqua;
+      color: #000;
       border: 0;
       font-size: 20px;
       cursor: pointer;
       transition: all .3s linear;
-      border-radius: 10px;
+      
     }
 
     .buy_ticket_btn_on_card {
+      margin: 0 auto;
       font-family: 'Anton', sans-serif;
       padding: 10px;
-      background-color: rgb(27, 240, 73);
-      color: #fff;
+      width: 100px;
+      
+      height: 50px;
+      background-color: aqua;
+      color: #000;
       border: 0;
       font-size: 20px;
       cursor: pointer;
       transition: all .3s linear;
+      
       
       
     }
     
     .buy_ticket_btn_on_card:hover {
-      background-color: rgb(150, 252, 49);
+      background-color: rgb(35, 199, 199);
     }
 
     .second_buy_ticket_btn {
@@ -438,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .buy_ticket_btn:hover {
-      background-color: rgb(150, 252, 49);
+      background-color: rgb(35, 199, 199);
     }
 
     .event_description {
@@ -470,7 +489,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .choose_city_link:hover {
-      color: rgb(27, 240, 73);
+      color: aqua;
     }
 
     .city_list {
@@ -497,16 +516,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .city_list a:hover {
-      color: rgb(27, 240, 73);;
+      color: aqua;
       background-color: #000;
     }
 
 
     /* Subscribe Form */
     .subscribe_block {
-      background: #000000;  
-      background: -webkit-linear-gradient(to right, #434343, #000000);  
-      background: linear-gradient(to right, #434343, #000000); 
+      background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
       padding: 15px 0 35px 0;
       display: grid;
       grid-auto-flow: row;
@@ -520,7 +540,7 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 30px;
       font-weight: 600;
       text-align: center;
-      color: #fff;
+      color: #000;
     }
 
     .subscribe_input_btn {
@@ -531,13 +551,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .subscribe_input {
-      font-size: 20px;
+      font-family: 'Anton', sans-serif;
+      font-size: 25px;
       height: 50px;
       width: 200px;
       padding: 10px;
       color: #000;
-      border: 1px solid #000;
-      margin: 5px;
+      border: 2px solid aqua;
+      
     }
 
     .subscribe_input:focus {
@@ -574,16 +595,17 @@ h1, h2, h3, h4, h5, h6 {
     
 
     .subscribe_btn {
-      padding: 12px 12px;
-      background-color: rgb(128, 14, 14);
-      color: #fff;
-      font-size: 16px;
+      font-family: 'Anton', sans-serif;
+      padding: 6px 12px;
+      background-color: aqua;
+      color: #000;
+      font-size: 20px;
       border: 0;
       transition: background-color .3s linear;
     }
 
     .subscribe_btn:hover {
-      background-color: red;
+      background-color: rgb(35, 199, 199);;
     }
 
     .subscribe_btn:focus {
@@ -591,17 +613,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .filter_btn {
+      font-family: 'Anton', sans-serif;
       width: 100px;
       height: 50px;
-      background-color: rgb(128, 14, 14);
-      color: #fff;
-      font-size: 20px;
+      background-color: aqua;
+      color: #000;
+      font-size: 22px;
       border: 0;
       transition: background-color .3s linear;
     }
 
     .filter_btn:hover {
-      background-color: red;
+      background-color: rgb(35, 199, 199);;
     }
 
     .filter_btn:focus {
@@ -631,7 +654,8 @@ h1, h2, h3, h4, h5, h6 {
       text-transform: uppercase;
       font-size: 30px;
       font-weight: 700;
-      color: rgb(128, 14, 14);
+      color: aqua;
+      letter-spacing: 2.5px;
     }
 
     .social_media {
@@ -642,13 +666,13 @@ h1, h2, h3, h4, h5, h6 {
 
     .social_media span {
       font-size: 30px;
-      color: rgb(128, 14, 14);
+      color: aqua;
       transition: color 0.3s linear;
       cursor: pointer;
     }
 
     .social_media span:hover {
-      color: red;
+      color: rgb(35, 199, 199);;
     }
 
     .footer_info_numbers {
@@ -664,17 +688,17 @@ h1, h2, h3, h4, h5, h6 {
       margin-top: 10px;
       font-size: 20px;
       font-weight: 700;
-      color: #000;
+      color: #fff;
     }
 
     .footer_info a {
       text-decoration: none;
-      color: #000;
+      color: #fff;
       transition: color .3s linear;
     }
 
     .footer_info a:hover {
-      color: rgb(128, 14, 14);
+      color: aqua;
     }
 
 
@@ -817,19 +841,21 @@ h1, h2, h3, h4, h5, h6 {
 
     .clear_btn, .back_btn {
       padding: 7px 16px;
-      font-size: 20px;
-      color: #fff;
+      font-size: 22px;
+      color: #000;
       border: 0;
       transition: background-color .3s linear;
+      font-weight: 500;
       
     }
 
     .clear_btn {
+      color: #fff;
       background-color:#e84c3d;
     }
 
     .back_btn {
-      background-color: green;
+      background-color: aqua;
     }
 
     .clear_btn:hover {
@@ -837,7 +863,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .back_btn:hover {
-      background-color: rgb(9, 158, 9);
+      background-color: rgb(35, 199, 199);;
     }
 
     /* Order Form */
@@ -851,15 +877,16 @@ h1, h2, h3, h4, h5, h6 {
       margin: 20px auto;
       padding: 10px 12px;
       font-size: 20px;
-      color: #fff;
+      color: #000;
       border: 0;
       transition: background-color .3s linear;
-      background-color: green;
-      border-radius: 15px;
+      background-color: aqua;
+      font-weight: 500;
+      
     }
 
     .confirm_order_btn:hover {
-      background-color: rgb(9, 158, 9);
+      background-color: rgb(35, 199, 199);
     }
     
 

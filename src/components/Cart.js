@@ -20,9 +20,9 @@ function Cart ()  {
         <div>
             <SecondHeader />
             <div className="cart_top_section">
-                <h2> Your Order: </h2>
-                <h5> Events: {value.cart.length} </h5>
-                <h5> Total: {}  </h5>
+                <h2 style={{color: '#fff'}}> Your Order: </h2>
+                <h5 style={{color: '#fff'}}> Events: {value.cart.length} </h5>
+                <h5 style={{color: '#fff'}}> Total: {}  </h5>
                 {value.cart.length === 0? <Link to='/'><button className="back_btn"> Back To Events </button> </Link> : <button className="clear_btn" onClick={value.clearOffCart}> Clear Cart </button>}
             </div>
             
