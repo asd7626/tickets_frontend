@@ -891,7 +891,40 @@ background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fir
     .confirm_order_btn:hover {
       background-color: rgb(35, 199, 199);
     }
+
+
+    .submit_month_btn {
+      font-family: 'Anton', sans-serif;
+      width: 100px;
+      height: 45px;
+      color: #000;
+      background-color: aqua;
+      font-size: 20px;
+      border: 0;
+      cursor: pointer;
+      transition: all .3s linear;
+    }
+
+    .submit_month_btn:hover {
+      background-color: rgb(35, 199, 199);
+    }
     
+    .select_field {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .select_field select {
+      height: 43px;
+      margin:  0 5px 0 5px;
+      border: 1px solid aqua;
+      font-size: 20px;
+      font-weight: 500;
+      
+    }
 
 }
 
