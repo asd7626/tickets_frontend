@@ -24,8 +24,8 @@ const SecondHeader = () => {
             <div className="nav" >
                 <Link className="logo_second_header" to="/"> <span className="logo_tickets_second"> Tickets</span> <span className="logo_ua_second">UA</span> </Link>
                 <div className="city_menu">
-                    <Link className="choose_city_link"  onClick={() => value.setIsOpenCity(!value.isOpenCity)}> City<DownOutlined /> </Link>
-                    <div className="city_list" isOpenCity={value.isOpenCity} style={{display: value.isOpenCity ? 'flex' : 'none'}} >
+                   City<DownOutlined />
+                    <div className="city_list">
                         <Link to='/kyiv'> Kyiv </Link>
                         <Link to='/dnipro'> Dnipro </Link>
                         <Link to='/kharkiv'> Kharkiv </Link>

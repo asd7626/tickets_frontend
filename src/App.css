@@ -388,6 +388,8 @@ font-family: 'Roboto', sans-serif;
       
     }
 
+    
+
     .event_info {
       border-bottom: 1px solid aqua;
       display: flex;
@@ -479,32 +481,32 @@ font-family: 'Roboto', sans-serif;
     /* City menu */
     .city_menu {
         position: relative;
+        font-size: 25px;
+        color: #fff;
+        transition: all .3s linear;
+        cursor: pointer;
+        
     }
 
-    .choose_city_link {
-      text-decoration: none;
-      color: #fff;
-      font-size: 24px;
-      transition: all .3s linear;
-    }
-
-    .choose_city_link:hover {
-      color: aqua;
-    }
-
+    
+  
     .city_list {
       padding: 5px;
       width: 150%;
       height: auto;
       color: #000;
-      display: flex;
+      display: none;
       flex-direction: column;
-      margin: 10px;
+      transition: display .3s linear;
       position: absolute;
       z-index: 5;
       background-color: rgb(227, 227, 233);
       text-align: center;
       
+    }
+
+    .city_menu:hover .city_list {
+      display: flex;
     }
 
     .city_list a {
@@ -520,6 +522,7 @@ font-family: 'Roboto', sans-serif;
       background-color: #000;
     }
 
+    
 
     /* Subscribe Form */
     .subscribe_block {

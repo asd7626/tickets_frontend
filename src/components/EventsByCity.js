@@ -19,10 +19,13 @@ const EventsByCity = (props) => {
         const event_city = props.match.params.city;
         const response = await fetch(`http://127.0.0.1:8000/api/${event_city}`);
         const events = await response.json();
-        console.log(event_city);
+        console.log(event_city, 'render');
+        setCity(event_city);
+        
         setAllEvents(events);
         setEvents(events);
-        setCity(event_city);
+        setCategory('All');
+        
     }
 
     const capitalizeFirstLetter = (string) => {
@@ -35,9 +38,11 @@ const EventsByCity = (props) => {
     }, [props]);
 
     const filterItems = (category) => {
+        console.log('filter items');
         if(category === 'all') {
-            setEvents(allEvents);
+            
             setCategory('All');
+            setEvents(allEvents);
             return;
         }
         const eventsByCategory = allEvents.filter((ev) => ev.category === category);

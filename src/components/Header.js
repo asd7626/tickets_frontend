@@ -29,8 +29,8 @@ const Header = () => {
             <div className="nav">
                 <Link className="logo" to="/"> <span className="logo_tickets"> Tickets</span> <span className="logo_ua">UA</span> </Link>
                 <div className="city_menu">
-                    <Link className="choose_city_link"  onClick={() => setIsOpenCity(!isOpenCity)}> City<DownOutlined /> </Link>
-                    <div className="city_list" isOpenCity={isOpenCity} style={{display: isOpenCity ? 'flex' : 'none'}} >
+                   City<DownOutlined />
+                    <div className="city_list">
                         <Link to='/kyiv'> Kyiv </Link>
                         <Link to='/dnipro'> Dnipro </Link>
                         <Link to='/kharkiv'> Kharkiv </Link>
