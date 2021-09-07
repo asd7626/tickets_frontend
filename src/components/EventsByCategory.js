@@ -66,13 +66,13 @@ const EventsByCategory = (props) => {
                             <option value="november">November</option>
                             <option value="december">December</option>
                         </select>
-                        <button className="submit_month_btn" onClick={() => filterItemsByMonth(month)} type="submit"> Submit </button>
+                        <button className="submit_month_btn" onClick={() => filterItemsByMonth(month)} type="submit"> Search </button>
             </div>
 
 
             {events.length === 0? <div style={{textAlign:'center', color:'white', fontSize:30+'px'}}>No events in this month in this category</div> :
                 <div onClick={() => value.setIsOpenCity(false)}>
-                    <Cards event_list={events} header={`category: ${category}`} />
+                    <Cards event_list={events} header={`Category: ${category}`} />
                 </div>
             }
             <SubscribeForm />

@@ -479,6 +479,16 @@ font-family: 'Roboto', sans-serif;
     
 
     /* City menu */
+    @keyframes fadeIn {
+      from {
+           opacity: 0;
+      }
+ 
+      to {
+           opacity: 1;
+      }
+ }
+
     .city_menu {
         position: relative;
         font-size: 25px;
@@ -497,7 +507,6 @@ font-family: 'Roboto', sans-serif;
       color: #000;
       display: none;
       flex-direction: column;
-      transition: display .3s linear;
       position: absolute;
       z-index: 5;
       background-color: rgb(227, 227, 233);
@@ -507,6 +516,8 @@ font-family: 'Roboto', sans-serif;
 
     .city_menu:hover .city_list {
       display: flex;
+      animation: fadeIn 1s;
+      
     }
 
     .city_list a {
@@ -923,6 +934,7 @@ background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Fir
       border: 1px solid aqua;
       font-size: 20px;
       font-weight: 500;
+      text-align: center;
       
     }
 

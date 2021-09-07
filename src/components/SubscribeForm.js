@@ -14,7 +14,7 @@ const SubscribeForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!email.includes('@')) {
+        if(!email.includes('.') || !email.includes('@')) {
             setEmail('');
             setShowMessage(false);
             setErrorMessage(true);

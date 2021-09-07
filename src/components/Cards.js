@@ -15,10 +15,7 @@ const Cards = ({event_list, header}) => {
     return(
         
         <div style={{paddingTop: 20+'px'}} >
-            
             <p className="event_cards_header" > {header} </p>
-            
-            
             
             <div className="event_cards">
                 {event_list.slice(0, visible).map((event_item) => {  

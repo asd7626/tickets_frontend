@@ -6,7 +6,7 @@ import Context from './Context';
 import { useHistory } from 'react-router';
 
 function OrderForm  ()  {
-    let history = useHistory();
+    
     const value = useContext(Context);
 
     const [name, setName] = useState('');
@@ -35,10 +35,8 @@ function OrderForm  ()  {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(name === '') {
+        if(name === '' || name.length < 4) {
             setName('');
-            setEmail('');
-            setPhone('');
             setNameErrorMessage(true);
             setTimeout(
                 () => setNameErrorMessage(false), 
@@ -47,10 +45,8 @@ function OrderForm  ()  {
             return;
         }
 
-        if(!email.includes('@')) {
+        if(!email.includes('.') || !email.includes('@')) {
             setEmail('');
-            setName('');
-            setPhone('');
             setEmailErrorMessage(true);
             setTimeout(
                 () => setEmailErrorMessage(false), 
@@ -59,10 +55,8 @@ function OrderForm  ()  {
             return;
         }
 
-        if(!phone.startsWith(380)) {
+        if(!phone.startsWith(380) || phone.length !== 12) {
             setPhone('');
-            setName('');
-            setEmail('');
             setPhoneErrorMessage(true);
             setTimeout(
                 () => setPhoneErrorMessage(false), 
