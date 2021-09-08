@@ -14,7 +14,9 @@ const EventInCart = ({item}) => {
         
     }, [amount, total])
 
-    
+    const capitalizeFirstLetter = (string) => {
+        return string[0].toUpperCase() + string.slice(1);
+    }
 
     const handlePlus = () => {
         setAmount(prev => prev + 1);
@@ -28,23 +30,34 @@ const EventInCart = ({item}) => {
 }
 
     return (
-        <div className="cart_item_whole">
-            <div className="cart_item">
-                <CloseSquareFilled title="Remove Ticket" onClick={() => value.removeFromCart(item)} className="delete_ticket_icon" />
-                    <div className="cart_item_items">
-                        <div className="cart_item_event"> <span>Event: </span>{item.headliner} in {item.city} </div>
-                        <div className="cart_item_place"> <span>Place: </span>{item.address} </div>
-                        <div className="cart_item_date"> <span>Date: </span> {item.date} </div>
-                        <div className="cart_item_price"> <span>Price: </span>${item.price} </div>
+            <div className="Event_In_Cart">
+               
+                <div className="Event_In_Cart_Left">
+                    <div className="Event_In_Cart_Left_Top">
+                        <span className="Event_In_Cart_HeadLiner">{item.headliner} </span> | <span className="Event_In_Cart_City"> {capitalizeFirstLetter(`${item.city}`)} </span>
                     </div>
+                    <div className="Event_In_Cart_Left_Top2">
+                        <span className="Event_In_Cart_Date">{item.date}</span>
+                    </div>
+                    <div className="Event_In_Cart_Left_Middle">
+                        <span className="Event_In_Cart_Address">{item.address}</span> 
+                    </div>
+                    <div className="Event_In_Cart_Left_Bottom">
+                        <span className="Event_In_Cart_Price"> ${item.price}</span> 
+                    </div>
+                    <CloseSquareFilled title="Remove Ticket" onClick={() => value.removeFromCart(item)} className="delete_ticket_icon" />
+                    
+                </div>
+                
+                <div className="Event_In_Cart_Right">
+                    <button className="plus_minus_btn" onClick={handlePlus}> + </button>
+                    <div className="quantity_number"> {amount} </div>
+                    <button className="plus_minus_btn" onClick={handleMinus}> - </button>
+                    <div className="total_number"> x{amount}: ${total}  </div>
+                </div>
+                
             </div>
-            <div className="cart_item_right">
-                <button className="plus_minus_btn" onClick={handlePlus}> + </button>
-                <div className="quantity_number"> {amount} </div>
-                <button className="plus_minus_btn" onClick={handleMinus}> - </button>
-                <div className="total_number"> x{amount}: ${total}  </div>
-            </div>
-        </div>
+    
     )
 }
 
