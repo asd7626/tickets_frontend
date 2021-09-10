@@ -57,8 +57,11 @@ const EventDetail =  (props) =>  {
                     </div>  
                 </div>
                 <div className="event_description" style={{marginBottom: 50+'px', color: '#fff'}}>
-                        <div className="event_detail_header"> About This Event</div>
+                        <div className="event_detail_header"> ABOUT THE HEADLINER: </div>
                         {ev.description}
+                        
+                        <div style={{marginTop:15+'px'}} className="event_detail_header"> WHY IS IT WORTH ATTENDING THIS CONCERT? </div>
+                        {ev.description2}
                 </div>
                  
                     

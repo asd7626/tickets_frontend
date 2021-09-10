@@ -8,11 +8,11 @@ const EventInCart = ({item}) => {
     const value = useContext(Context);
     const [amount, setAmount] = useState(1);
     const [total, setTotal] = useState(0);
+    
 
     useEffect(() => {
-        setTotal(amount * item.price);
-        
-    }, [amount, total])
+        setTotal(amount * item.price);    
+    }, [item.price, amount, total])
 
     const capitalizeFirstLetter = (string) => {
         return string[0].toUpperCase() + string.slice(1);
@@ -20,13 +20,19 @@ const EventInCart = ({item}) => {
 
     const handlePlus = () => {
         setAmount(prev => prev + 1);
+        value.setTotalValue(prev => prev + item.price);
     }
 
     const handleMinus = () => {
         setAmount(prev => prev - 1);
         if(amount === 1) {
             setAmount(1);
-    }
+        }
+        if(amount > 1) {
+            value.setTotalValue(prev => prev - item.price);
+        }
+        
+
 }
 
     return (

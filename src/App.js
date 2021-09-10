@@ -4,11 +4,13 @@ import BaseRouter from './routes';
 import Context from './components/Context';
 
 
+
+
 function App() {
 
   const [isOpenCity, setIsOpenCity] = useState(false);
   const [cart, setCart] = useState([]);
-  const [totalValue, setTotalValue] = useState([]);
+  const [totalValue, setTotalValue] = useState(0);
   const [eventIds, setEventIds] = useState([]);
   
 
@@ -18,19 +20,25 @@ function App() {
         if(!eventIds.includes(eventToAdd.id)) {
           setCart([...cart, {... eventToAdd }]);
           setEventIds([... eventIds, eventToAdd.id]);
+          setTotalValue(prev => prev + eventToAdd.price);
         }
      };
  
   const removeFromCart = (eventToRemove) => {
+         
          setCart(cart.filter((ev) => ev !== eventToRemove));
          setEventIds(eventIds.filter((ev) => ev !== eventToRemove.id));
+        
      };
      
   const clearOffCart = () => {
        setCart([]);
        setEventIds([]);
+       setTotalValue(0);
        
      }
+
+  
 
      //Все для контекста
      const value = {

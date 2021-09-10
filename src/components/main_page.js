@@ -1,12 +1,15 @@
+import React, {useState, useEffect, useContext} from 'react';
 import '../App.css';
+
 import Cards from './Cards';
 import Slider from './Slider';
 import Header from './Header';
-import {useState, useEffect, useContext} from 'react';
 import SubscribeForm from './SubscribeForm';
 import Footer from './Footer';
 import Context from './Context';
 import LoaderComponent from './Loader';
+
+
 
 
 function MainPage() {
@@ -53,6 +56,7 @@ function MainPage() {
             {latestEvents.length > 0 && <Cards event_list={latestEvents} header={'New On The Site'}  />}
         </div>
         <SubscribeForm />
+        
         <Footer />
     </div>
     
