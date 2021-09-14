@@ -514,6 +514,10 @@ font-family: 'Roboto', sans-serif;
       
     }
 
+    .city_menu:hover {
+      color: aqua;
+    }
+
     .city_menu:hover .city_list {
       display: flex;
       animation: fadeIn 1s;
@@ -714,6 +718,7 @@ font-family: 'Roboto', sans-serif;
     .footer_info a:hover {
       color: aqua;
     }
+
 
 
     /* Cart */

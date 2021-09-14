@@ -51,7 +51,7 @@ const EventInCart = ({item}) => {
                     <div className="Event_In_Cart_Left_Bottom">
                         <span className="Event_In_Cart_Price"> ${item.price}</span> 
                     </div>
-                    <CloseSquareFilled title="Remove Ticket" onClick={() => value.removeFromCart(item)} className="delete_ticket_icon" />
+                    
                     
                 </div>
                 

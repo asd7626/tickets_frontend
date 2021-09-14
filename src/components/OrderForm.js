@@ -45,7 +45,7 @@ function OrderForm  ()  {
             return;
         }
 
-        if(!email.includes('.') || !email.includes('@')) {
+        if(!email.includes('.') || !email.includes('@') || email === '@.' || email === '.@') {
             setEmail('');
             setEmailErrorMessage(true);
             setTimeout(
@@ -73,10 +73,13 @@ function OrderForm  ()  {
                 events: value.eventIds,
                 name: name,
                 email: email,
-                phone: phone
+                phone: phone,
+                total: value.totalValue
+                
             }),
         };
         console.log(requestOptions);
+        console.log(value.totalValue);
         fetch('http://127.0.0.1:8000/api/orderlist/', requestOptions)
         .then((response) => response.json())
         .then((data) => console.log(data))
