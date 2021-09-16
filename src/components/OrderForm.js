@@ -12,6 +12,7 @@ function OrderForm  ()  {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [comment, setComment] = useState('');
     const [successMessage, setSuccessMessage] = useState(false);    
     const [nameErrorMessage, setNameErrorMessage] = useState(false);
     const [emailErrorMessage, setEmailErrorMessage] = useState(false);
@@ -33,10 +34,16 @@ function OrderForm  ()  {
         
     }
 
+    const handleOnChangeComment = (e) => {
+        setComment(e.target.value);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if(name === '' || name.length < 4) {
             setName('');
+            setEmailErrorMessage(false);
+            setPhoneErrorMessage(false);
             setNameErrorMessage(true);
             setTimeout(
                 () => setNameErrorMessage(false), 
@@ -47,6 +54,8 @@ function OrderForm  ()  {
 
         if(!email.includes('.') || !email.includes('@') || email === '@.' || email === '.@') {
             setEmail('');
+            setNameErrorMessage(false);
+            setPhoneErrorMessage(false);
             setEmailErrorMessage(true);
             setTimeout(
                 () => setEmailErrorMessage(false), 
@@ -57,6 +66,8 @@ function OrderForm  ()  {
 
         if(!phone.startsWith(380) || phone.length !== 12) {
             setPhone('');
+            setNameErrorMessage(false);
+            setEmailErrorMessage(false);
             setPhoneErrorMessage(true);
             setTimeout(
                 () => setPhoneErrorMessage(false), 
@@ -64,6 +75,10 @@ function OrderForm  ()  {
               );
             return;
         }
+
+        setNameErrorMessage(false);
+        setEmailErrorMessage(false);
+        setPhoneErrorMessage(false);
 
         const requestOptions = {
             method:'POST',
@@ -74,7 +89,8 @@ function OrderForm  ()  {
                 name: name,
                 email: email,
                 phone: phone,
-                total: value.totalValue
+                total: value.totalValue,
+                comment: comment
                 
             }),
         };
@@ -88,6 +104,7 @@ function OrderForm  ()  {
         setName('');
         setEmail('');
         setPhone('');
+        setComment('');
         value.clearOffCart();
         
         setSuccessMessage(true);
@@ -111,18 +128,23 @@ function OrderForm  ()  {
                 <h5 style={{color: '#fff'}}>Confirm Your Order Please: </h5>
                 
                     <InputGroup size="lg" style={{marginBottom:15+'px'}}>
-                        <InputGroup.Text style={{width:85+'px'}} id="inputGroup-sizing-lg">Name</InputGroup.Text>
+                        <InputGroup.Text style={{width:115+'px'}} id="inputGroup-sizing-lg">Name</InputGroup.Text>
                         <FormControl placeholder="Example: Ivan Ivanov" disabled={value.cart.length===0}  value={name} onChange={(e) => handleOnChangeName(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="name" required />
                     </InputGroup>
 
                     <InputGroup size="lg" style={{marginBottom:15+'px'}}>
-                        <InputGroup.Text style={{width:85+'px'}} id="inputGroup-sizing-lg">Email</InputGroup.Text>
+                        <InputGroup.Text style={{width:115+'px'}} id="inputGroup-sizing-lg">Email</InputGroup.Text>
                         <FormControl placeholder="Example: Ivanov@gmail.com" disabled={value.cart.length===0} value={email} onChange={(e) => handleOnChangeEmail(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" name="email" required />
                     </InputGroup>
                     
-                    <InputGroup  size="lg">
-                        <InputGroup.Text style={{width:85+'px'}} id="inputGroup-sizing-lg">Phone</InputGroup.Text>
+                    <InputGroup  size="lg" style={{marginBottom:15+'px'}}>
+                        <InputGroup.Text style={{width:115+'px'}} id="inputGroup-sizing-lg">Phone</InputGroup.Text>
                         <FormControl placeholder="Format: 380XXXXXXXXX" disabled={value.cart.length===0} value={phone} onChange={(e) => handleOnChangePhone(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm" type="number" name="phone" required />
+                    </InputGroup>
+
+                    <InputGroup size="lg" >
+                        <InputGroup.Text style={{width:115+'px'}} id="inputGroup-sizing-lg">Comment</InputGroup.Text>
+                        <FormControl style={{}} placeholder="Enter Your Comment Here (not necessary)" disabled={value.cart.length===0}  value={comment} onChange={(e) => handleOnChangeComment(e)} className="order_form_input" aria-label="Large" aria-describedby="inputGroup-sizing-sm"  name="comment" />
                     </InputGroup>
                 
                 <div style={{position:'relative'}}>

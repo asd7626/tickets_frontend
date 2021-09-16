@@ -26,6 +26,11 @@ button {
 }
 
 
+.display-linebreak {
+  
+  white-space: pre-wrap;
+}
+
 /* 320x480 */
 @media(min-width: 320px) {
 
@@ -463,6 +468,8 @@ font-family: 'Roboto', sans-serif;
     }
 
     .event_description {
+      width:100%;
+      
       text-align: justify;
       letter-spacing: 1px;  
     }
