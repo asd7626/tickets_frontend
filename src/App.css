@@ -63,12 +63,13 @@ button {
     text-decoration: none;
   }
 
-  .nav {
+  .navigation {
+    
     font-family: 'Anton', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+   flex-wrap: wrap; 
   }
 
   
@@ -152,9 +153,9 @@ button {
     background-color: aqua;
   }
 
-  a.cart_link {
+  .cart_link {
     text-decoration: none;
-    flex: none;
+    
   }
 
   .cart_icon {
@@ -573,6 +574,7 @@ font-family: 'Roboto', sans-serif;
       justify-content: center;
       align-items: center;
       width: 100%;
+      
     }
 
     .subscribe_input {
@@ -620,8 +622,10 @@ font-family: 'Roboto', sans-serif;
     
 
     .subscribe_btn {
+      
       font-family: 'Anton', sans-serif;
-      padding: 6px 12px;
+      padding: 10px 12px;
+      height: 50px;
       background-color: aqua;
       color: #000;
       font-size: 20px;
@@ -876,13 +880,13 @@ font-family: 'Roboto', sans-serif;
 
     .confirm_order_btn {
       margin: 20px auto;
-      padding: 10px 12px;
+      padding: 8px 10px;
       font-size: 20px;
       color: #000;
       border: 0;
       transition: background-color .3s linear;
       background-color: aqua;
-      font-weight: 500;
+      font-weight: 700;
       
     }
 

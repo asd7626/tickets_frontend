@@ -25,7 +25,7 @@ const Card = ({event_item}) => {
                 <div className="event_card_price">  ${event_item.price} </div>
                 <div className="buy_ticket_btn_on_card_block">
                     <Link>
-                        <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> <ShoppingCartOutlined/> Cart </button> 
+                        <button className="buy_ticket_btn_on_card" onClick={() => value.addToCart(event_item)}> <ShoppingCartOutlined/> Add </button> 
                     </Link>
                 </div>
             </div>

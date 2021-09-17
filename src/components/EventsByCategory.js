@@ -28,7 +28,10 @@ const EventsByCategory = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
         getEvents(props);
+        setMonth('all');
     }, [props]);
+
+    
 
     const filterItemsByMonth = (month) => {
         if(month === 'all') {
@@ -51,7 +54,7 @@ const EventsByCategory = (props) => {
             <SecondHeader />
             <div className="select_field"> 
                         <span style={{fontFamily: 'Anton', color: '#fff',  fontSize:30+'px'}}>Month: </span>
-                        <select onChange={handleChange}>
+                        <select onChange={handleChange} value={month}>
                             <option value="all"> All </option>
                             <option value="january">January</option>
                             <option value="february">February</option>

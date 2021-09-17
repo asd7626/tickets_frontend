@@ -54,12 +54,12 @@ const EventsByCity = (props) => {
         <Fragment>
             <SecondHeader />
             <div style={{marginTop:25+'px', display:'flex', flexDirection:'column', rowGap:10+'px', justifyContent:'center', alignItems:'center'}}>
-                <div style={{display:'flex', columnGap:15+'px'}}>
+                <div style={{display:'flex', columnGap:10+'px'}}>
                     <button className="filter_btn" onClick={() => filterItems('all')}> All Events </button>
                     <button className="filter_btn" onClick={() => filterItems('concerts')}>Concert</button>
                     <button className="filter_btn" onClick={() => filterItems('humor')}>Humor</button>
                 </div>
-                <div style={{display:'flex', columnGap:15+'px'}}>
+                <div style={{display:'flex', columnGap:10+'px'}}>
                     <button className="filter_btn" onClick={() => filterItems('kids')}>For Kids</button>
                     <button className="filter_btn" onClick={() => filterItems('theater')}>Theater</button>
                     <button className="filter_btn" onClick={() => filterItems('festivals')}>Festivals</button>
